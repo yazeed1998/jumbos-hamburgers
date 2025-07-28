@@ -287,3 +287,31 @@ footer {
     text-align: center;
   }
 }
+
+/* Mobile Hamburger Menu */
+.hamburger {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: #f8c300;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    background: #111;
+    width: 100%;
+    margin-top: 10px;
+    padding: 20px;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+}

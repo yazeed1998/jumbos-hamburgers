@@ -1,2 +1,8 @@
-// Jumbo's site interactivity will go here
-console.log("Jumbo’s Hamburgers site loaded.");
+document.addEventListener("DOMContentLoaded", function () {
+  const hamburger = document.getElementById("hamburger");
+  const navLinks = document.getElementById("navLinks");
+
+  hamburger.addEventListener("click", () => {
+    navLinks.classList.toggle("show");
+  });
+});
