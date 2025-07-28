@@ -67,3 +67,13 @@ footer { background: #333; color: #fff; text-align: center; padding: 2rem 0; }
 
 /* ——— Section Spacing ——— */
 section { padding: 2rem 0; }
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (max-width: 600px) {
+  .teaser-cards {
+    grid-template-columns: 1fr !important;
+  }
+}
