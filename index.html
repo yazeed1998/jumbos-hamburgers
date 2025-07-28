@@ -1,78 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jumbo's Hamburgers | Home</title>
-  <link rel="stylesheet" href="css/style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Jumbo’s Hamburgers | Home</title>
+
+  <!-- your main stylesheet -->
+  <link rel="stylesheet" href="css/style.css"/>
+
+  <!-- fonts & icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"/>
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+  <!-- AOS animations -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet"/>
 </head>
 <body>
-  <header class="hero">
+
+  <!-- SITE HEADER / NAV -->
+  <header class="site-header">
     <nav class="navbar">
-  <div class="container">
-    <div class="logo">Jumbo’s</div>
-    <div class="hamburger" id="hamburger">&#9776;</div>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="menu.html">Menu</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="contact.html" class="active">Contact</a></li>
-    </ul>
-  </div>
-</nav>
-    <div class="hero-text" data-aos="fade-up">
-      <h1>Big Flavor.<br>Even Bigger Burgers.</h1>
-      <p>Tulsa’s Favorite Since 1978</p>
-      <a href="menu.html" class="btn">Explore Our Menu</a>
-    </div>
+      <div class="container">
+        <div class="logo">Jumbo’s</div>
+        <div class="hamburger" id="hamburger">&#9776;</div>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
   </header>
 
-  <main>
-    <section class="featured" data-aos="fade-up">
-      <div class="container">
-        <h2>Customer Favorites</h2>
-        <div class="grid">
-          <div class="card">
-            <img src="https://source.unsplash.com/400x300/?burger,bacon" alt="Bacon Cheeseburger" />
-            <h3>Bacon Cheeseburger</h3>
-          </div>
-          <div class="card">
-            <img src="https://source.unsplash.com/400x300/?gyro,burger" alt="Gyro Burger" />
-            <h3>Gyro Burger</h3>
-          </div>
-          <div class="card">
-            <img src="https://source.unsplash.com/400x300/?mediterranean,plate" alt="Mediterranean Plate" />
-            <h3>Mediterranean Plate</h3>
-          </div>
-        </div>
-      </div>
-    </section>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-overlay container">
+      <h1 data-aos="fade-up">Big Flavor.<br/>Even Bigger Burgers.</h1>
+      <p data-aos="fade-up" data-aos-delay="100">Tulsa’s Favorite Since 1978</p>
+      <a href="menu.html" class="btn" data-aos="fade-up" data-aos-delay="200">Explore Our Menu</a>
+    </div>
+  </section>
 
-    <section class="about-preview" data-aos="fade-up">
-      <div class="container">
-        <div class="about-flex">
-          <div class="text">
-            <h2>Locally Loved Since Day One</h2>
-            <p>From burgers to baklava, we serve Tulsa’s tastiest. Come taste the tradition that made Jumbo’s a local legend.</p>
-            <a href="about.html" class="btn">Read Our Story</a>
-          </div>
-          <div class="image"></div>
-        </div>
-      </div>
-    </section>
-  </main>
+  <!-- OUR STORY -->
+  <section class="story container" data-aos="fade-up">
+    <div class="story-content">
+      <h2>Our Story</h2>
+      <p>Since opening our doors in 1978, Jumbo’s Hamburgers has been a beloved Tulsa tradition—serving up homemade‐style burgers, hearty chilis, and Mediterranean plates infused with authentic flavor.</p>
+      <a href="about.html" class="btn btn-secondary">Read More</a>
+    </div>
+    <div class="story-image">
+      <img src="https://source.unsplash.com/800x600/?restaurant,kitchen" alt="Jumbo’s kitchen"/>
+    </div>
+  </section>
 
+  <!-- ORDER & VISIT TEASER -->
+  <section class="teaser container" data-aos="fade-up">
+    <div class="teaser-cards">
+      <div class="card">
+        <i class="fas fa-shopping-bag fa-2x"></i>
+        <h3>Order Online</h3>
+        <p>Get your favorites delivered hot and fresh.</p>
+        <a href="#" class="btn-link">Order Now</a>
+      </div>
+      <div class="card">
+        <i class="fas fa-utensils fa-2x"></i>
+        <h3>Dine In</h3>
+        <p>Enjoy a cozy meal in our classic Tulsa spot.</p>
+        <a href="contact.html#hours" class="btn-link">View Hours</a>
+      </div>
+      <div class="card">
+        <i class="fas fa-map-marker-alt fa-2x"></i>
+        <h3>Visit Us</h3>
+        <p>6558 E 41st St, Tulsa, OK 74145</p>
+        <a href="contact.html#map" class="btn-link">Get Directions</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED FAVORITES -->
+  <section class="featured container" data-aos="fade-up">
+    <h2>Customer Favorites</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="https://source.unsplash.com/400x300/?burger,bacon" alt="Bacon Cheeseburger"/>
+        <h3>Bacon Cheeseburger</h3>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/400x300/?gyro,burger" alt="Gyro Burger"/>
+        <h3>Gyro Burger</h3>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/400x300/?mediterranean,plate" alt="Mediterranean Plate"/>
+        <h3>Mediterranean Plate</h3>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
   <footer>
     <div class="container">
-      <p>&copy; 2025 Jumbo's Hamburgers — Tulsa, OK</p>
+      <p>&copy; 2025 Jumbo’s Hamburgers — Tulsa, OK</p>
     </div>
   </footer>
 
+  <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-  <script>AOS.init();</script>
+  <script>
+    AOS.init();
+  </script>
   <script src="js/script.js"></script>
 </body>
 </html>
