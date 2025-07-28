@@ -234,3 +234,56 @@ footer {
   border: 0;
   border-radius: 10px;
 }
+
+/* Mobile cleanup for alignment, padding, and sizing */
+@media (max-width: 768px) {
+  body {
+    padding: 0 16px;
+  }
+
+  .page-title {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .menu-item {
+    font-size: 1rem;
+    padding: 15px;
+  }
+
+  .featured h2,
+  .menu-section h2 {
+    font-size: 1.4rem;
+    text-align: center;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .about-text p {
+    font-size: 1rem;
+  }
+
+  .contact-form form input,
+  .contact-form form textarea {
+    width: 100%;
+  }
+
+  .about-content {
+    gap: 20px;
+  }
+
+  .navbar {
+    align-items: center;
+  }
+
+  .nav-links {
+    align-items: center;
+  }
+
+  .nav-links li {
+    text-align: center;
+  }
+}
