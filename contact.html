@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact | Jumbo’s Hamburgers</title>
+
+  <!-- main stylesheet -->
+  <link rel="stylesheet" href="css/style.css"/>
+
+  <!-- fonts & icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"/>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+  <!-- AOS animations -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet"/>
+</head>
+<body>
+
+  <!-- SITE HEADER / NAV -->
+  <header class="site-header">
+    <nav class="navbar">
+      <div class="container">
+        <div class="logo">Jumbo’s</div>
+        <div class="hamburger" id="hamburger">&#9776;</div>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-overlay container">
+      <h1 data-aos="fade-up">Contact Us</h1>
+      <p data-aos="fade-up" data-aos-delay="100">We’d love to hear from you!</p>
+    </div>
+  </section>
+
+  <!-- CONTACT CONTENT -->
+  <main class="contact-page container">
+    <section class="contact-section" data-aos="fade-up">
+      <div class="contact-flex">
+        <!-- Contact Form -->
+        <div class="contact-form">
+          <form action="#" method="post">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your Name" required />
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Your Email" required />
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Type your message..." rows="6" required></textarea>
+
+            <button type="submit" class="btn">Send Message</button>
+          </form>
+        </div>
+
+        <!-- Contact Info & Map -->
+        <div class="contact-info">
+          <h3>Visit or Call</h3>
+          <p><strong>📍 Address:</strong><br>6558 E 41st St, Tulsa, OK 74145</p>
+          <p><strong>📞 Phone:</strong><br>(918) 663‑0944</p>
+          <p id="hours"><strong>🕒 Hours:</strong><br>
+            Mon–Fri: 10 AM–7 PM<br>
+            Sat: 11 AM–7 PM<br>
+            Sun: Closed
+          </p>
+
+          <div id="map" class="map">
+            <iframe
+              src="https://www.google.com/maps?q=6558+E+41st+St,+Tulsa,+OK+74145&output=embed"
+              width="100%"
+              height="250"
+              style="border:0;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Jumbo’s Hamburgers — Tulsa, OK</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+  <script src="js/script.js"></script>
+</body>
+</html>
