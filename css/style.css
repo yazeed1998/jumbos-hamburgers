@@ -538,3 +538,72 @@ footer {
 .menu-item:hover {
   background-color: #fff7d0;
 }
+
+
+/* === ADVANCED MENU DESIGN === */
+.menu-page {
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #fff5e6 0%, #fff9f0 100%);
+  min-height: 100vh;
+}
+
+.page-title {
+  text-align: center;
+  font-size: 2.8rem;
+  font-weight: bold;
+  color: #222;
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 50px;
+  text-shadow: 1px 1px 0 #f8c300;
+}
+
+.menu-section {
+  margin-bottom: 50px;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(8px);
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  border-left: 6px solid #f8c300;
+  transition: transform 0.3s ease;
+}
+
+.menu-section:hover {
+  transform: scale(1.01);
+}
+
+.menu-section h2 {
+  font-size: 1.8rem;
+  color: #f8c300;
+  margin-bottom: 25px;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 10px;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  text-transform: uppercase;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.menu-item {
+  background: #fffefc;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #444;
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.menu-item:hover {
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  transform: translateY(-3px);
+  background: #fff5d4;
+}
