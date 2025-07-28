@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About | Jumbo’s Hamburgers</title>
+
+  <!-- main stylesheet -->
+  <link rel="stylesheet" href="css/style.css"/>
+
+  <!-- fonts & icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"/>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+  <!-- AOS animations -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet"/>
+</head>
+<body>
+
+  <!-- SITE HEADER / NAV -->
+  <header class="site-header">
+    <nav class="navbar">
+      <div class="container">
+        <div class="logo">Jumbo’s</div>
+        <div class="hamburger" id="hamburger">&#9776;</div>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="about.html" class="active">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-overlay container">
+      <h1 data-aos="fade-up">Our Story</h1>
+      <p data-aos="fade-up" data-aos-delay="100">Proudly serving Tulsa since 1978</p>
+    </div>
+  </section>
+
+  <!-- ABOUT CONTENT -->
+  <main class="about-page container">
+    <section class="story" data-aos="fade-up">
+      <div class="story-content">
+        <h2>From Small Beginnings</h2>
+        <p>Jumbo’s Hamburgers began as a family-run stand in Tulsa, capturing hearts with our signature burgers and homemade sauces. Over the decades, we’ve stayed true to our roots—fresh ingredients, bold flavors, and a warm, welcoming atmosphere.</p>
+        <p>Today, you’ll still find the same passion in every bite: handcrafted patties, savory Mediterranean specialties, and our all‑time favorite chili, simmered to perfection every morning. Our goal? To make every visit feel like coming home.</p>
+      </div>
+      <div class="story-image">
+        <img src="https://source.unsplash.com/800x600/?family,restaurant" alt="Jumbo’s family legacy"/>
+      </div>
+    </section>
+
+    <section class="contact-details" data-aos="fade-up">
+      <h3>Visit or Contact Us</h3>
+      <p><strong>📍 Address:</strong> 6558 E 41st St, Tulsa, OK 74145</p>
+      <p><strong>📞 Phone:</strong> (918) 663‑0944</p>
+      <p><strong>🕒 Hours:</strong><br>
+         Mon–Fri: 10 AM–7 PM<br>
+         Sat: 11 AM–7 PM<br>
+         Sun: Closed
+      </p>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Jumbo’s Hamburgers — Tulsa, OK</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+  <script src="js/script.js"></script>
+</body>
+</html>
