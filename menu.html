@@ -21,13 +21,32 @@
   <header class="site-header">
     <nav class="navbar">
       <div class="container">
-        <div class="logo">Jumbo’s</div>
+        <div class="logo">Jumbo’s Hamburgers</div>
         <div class="hamburger" id="hamburger">&#9776;</div>
         <ul class="nav-links" id="navLinks">
           <li><a href="index.html">Home</a></li>
-          <li><a href="menu.html" class="active">Menu</a></li>
+          <li class="nav-item dropdown">
+            <a href="#" class="dropbtn">
+              Menu <i class="fas fa-caret-down"></i>
+            </a>
+            <ul class="dropdown">
+              <li><a href="menu.html#burgers">Burgers</a></li>
+              <li><a href="menu.html#chilis">Chilis &amp; Dinners</a></li>
+              <li><a href="menu.html#subs">Subs &amp; Sandwiches</a></li>
+              <li><a href="menu.html#kids">Kids Meals</a></li>
+              <li><a href="menu.html#mediterranean">Mediterranean</a></li>
+              <li><a href="menu.html#salads">Salads</a></li>
+              <li><a href="menu.html#sides">Sides</a></li>
+              <li><a href="menu.html#desserts">Desserts &amp; Drinks</a></li>
+            </ul>
+          </li>
           <li><a href="about.html">About</a></li>
           <li><a href="contact.html">Contact</a></li>
+          <li>
+            <a href="https://instagram.com/jumboshamburgers" target="_blank">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </li>
         </ul>
       </div>
     </nav>
@@ -46,7 +65,7 @@
     <h2 class="page-title" data-aos="fade-up">Signature Selections</h2>
 
     <!-- Burgers -->
-    <section class="menu-section" data-aos="fade-up">
+    <section id="burgers" class="menu-section" data-aos="fade-up">
       <h3 class="section-title">🍔 Burgers</h3>
       <div class="menu-grid">
         <div class="menu-item"><strong>Gyro Cheese Burger</strong><span>$10.99</span></div>
@@ -60,7 +79,7 @@
     </section>
 
     <!-- Chilis & Dinners -->
-    <section class="menu-section" data-aos="fade-up">
+    <section id="chilis" class="menu-section" data-aos="fade-up">
       <h3 class="section-title">🌶️ Chilis & Dinners</h3>
       <div class="menu-grid">
         <div class="menu-item"><strong>3‑Way Chili</strong><span>$9.99</span></div>
@@ -71,7 +90,7 @@
     </section>
 
     <!-- Subs & Grilled Sandwiches -->
-    <section class="menu-section" data-aos="fade-up">
+    <section id="subs" class="menu-section" data-aos="fade-up">
       <h3 class="section-title">🥪 Subs & Grilled Sandwiches</h3>
       <div class="menu-grid">
         <div class="menu-item"><strong>Philly Cheesesteak</strong><span>$9.99</span></div>
@@ -82,7 +101,7 @@
     </section>
 
     <!-- Kids Meals -->
-    <section class="menu-section" data-aos="fade-up">
+    <section id="kids" class="menu-section" data-aos="fade-up">
       <h3 class="section-title">👧 Kids Meals</h3>
       <div class="menu-grid">
         <div class="menu-item"><strong>Kids Cheeseburger</strong><span>$5.99</span></div>
@@ -92,7 +111,7 @@
     </section>
 
     <!-- Mediterranean Plates -->
-    <section class="menu-section" data-aos="fade-up">
+    <section id="mediterranean" class="menu-section" data-aos="fade-up">
       <h3 class="section-title">🍽️ Mediterranean Plates</h3>
       <div class="menu-grid">
         <div class="menu-item"><strong>Gyro Plate</strong><span>$11.99</span></div>
@@ -102,7 +121,7 @@
     </section>
 
     <!-- Salads -->
-    <section class="menu-section" data-aos="fade-up">
+    <section id="salads" class="menu-section" data-aos="fade-up">
       <h3 class="section-title">🥗 Salads</h3>
       <div class="menu-grid">
         <div class="menu-item"><strong>Garden Salad</strong><span>$7.99</span></div>
@@ -112,7 +131,7 @@
     </section>
 
     <!-- Sides -->
-    <section class="menu-section" data-aos="fade-up">
+    <section id="sides" class="menu-section" data-aos="fade-up">
       <h3 class="section-title">🍟 Sides</h3>
       <div class="menu-grid">
         <div class="menu-item"><strong>French Fries</strong><span>$2.99</span></div>
@@ -122,7 +141,7 @@
     </section>
 
     <!-- Desserts & Drinks -->
-    <section class="menu-section" data-aos="fade-up">
+    <section id="desserts" class="menu-section" data-aos="fade-up">
       <h3 class="section-title">🍰 Desserts & Drinks</h3>
       <div class="menu-grid">
         <div class="menu-item"><strong>Baklava</strong><span>$3.99</span></div>
@@ -148,3 +167,4 @@
   <script src="js/script.js"></script>
 </body>
 </html>
+
