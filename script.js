@@ -23,3 +23,17 @@ document.addEventListener('DOMContentLoaded', () => {
   // Scroll to top on reload
   window.scrollTo(0, 0);
 });
+
+// Mobile submenu toggle for “Menu” dropdown
+document.addEventListener('DOMContentLoaded', () => {
+  const dropbtn = document.querySelector('.dropbtn');
+  if (dropbtn) {
+    dropbtn.addEventListener('click', e => {
+      if (window.innerWidth <= 768) {
+        e.preventDefault();
+        const submenu = dropbtn.nextElementSibling;
+        submenu.classList.toggle('show');
+      }
+    });
+  }
+});
