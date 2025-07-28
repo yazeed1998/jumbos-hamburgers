@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Jumbo's Hamburgers | Home</title>
   <link rel="stylesheet" href="css/style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/yourkitcode.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 </head>
 <body>
   <header class="hero">
@@ -14,33 +15,42 @@
       <div class="logo">Jumbo’s</div>
       <div class="hamburger" id="hamburger">&#9776;</div>
       <ul class="nav-links" id="navLinks">
-        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html" class="active">Home</a></li>
         <li><a href="menu.html">Menu</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
-    <div class="hero-text">
-      <h1>Welcome to Jumbo’s Hamburgers</h1>
-      <p>Big Flavor. Bigger Burgers. Tulsa’s Favorite Spot.</p>
-      <a href="menu.html" class="btn">View Menu</a>
+    <div class="hero-text" data-aos="fade-up">
+      <h1>Big Flavor. <br>Even Bigger Burgers.</h1>
+      <p>Tulsa’s Favorite Since 1978</p>
+      <a href="menu.html" class="btn">Explore Our Menu</a>
     </div>
   </header>
 
-  <section class="featured">
+  <section class="featured" data-aos="fade-up">
     <h2>Customer Favorites</h2>
     <div class="grid">
-      <div class="card"><h3>Bacon Cheeseburger</h3></div>
-      <div class="card"><h3>Gyro Burger</h3></div>
-      <div class="card"><h3>Mediterranean Plate</h3></div>
+      <div class="card">
+        <img src="https://source.unsplash.com/400x300/?burger,bacon" alt="Bacon Cheeseburger">
+        <h3>Bacon Cheeseburger</h3>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/400x300/?gyro,burger" alt="Gyro Burger">
+        <h3>Gyro Burger</h3>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/400x300/?mediterranean,plate" alt="Mediterranean Plate">
+        <h3>Mediterranean Plate</h3>
+      </div>
     </div>
   </section>
 
-  <section class="about-preview">
+  <section class="about-preview" data-aos="fade-up">
     <div class="text">
-      <h2>Our Story</h2>
-      <p>Serving Tulsa since [year]. Jumbo’s is known for juicy burgers, family-friendly vibes, and unbeatable value.</p>
-      <a href="about.html" class="btn">Learn More</a>
+      <h2>Locally Loved Since Day One</h2>
+      <p>From burgers to baklava, we serve Tulsa’s tastiest. Come taste the tradition that made Jumbo’s a local legend.</p>
+      <a href="about.html" class="btn">Read Our Story</a>
     </div>
     <div class="image"></div>
   </section>
@@ -49,6 +59,10 @@
     <p>&copy; 2025 Jumbo's Hamburgers — Tulsa, OK</p>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
   <script src="js/script.js"></script>
 </body>
 </html>
