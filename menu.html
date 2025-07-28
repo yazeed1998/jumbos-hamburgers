@@ -1,83 +1,48 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Menu | Jumbo's Hamburgers</title>
-  <link rel="stylesheet" href="css/style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-</head>
-<body>
-  <header class="navbar">
-    <div class="logo">Jumbo’s</div>
-    <div class="hamburger" id="hamburger">&#9776;</div>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="menu.html" class="active">Menu</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </header>
+<main class="menu-page">
+  <h1 class="page-title" data-aos="fade-up">Our Menu</h1>
 
-  <main class="menu-page">
-    <h1 class="page-title" data-aos="fade-up">Our Menu</h1>
+  <!-- TAB NAVIGATION -->
+  <div class="tab-buttons" data-aos="fade-up">
+    <button class="tab-btn active" data-target="burgers">Burgers</button>
+    <button class="tab-btn" data-target="mediterranean">Mediterranean</button>
+    <button class="tab-btn" data-target="sides">Sides</button>
+    <button class="tab-btn" data-target="drinks">Drinks</button>
+  </div>
 
-    <!-- BURGERS -->
-    <section class="menu-section" data-aos="fade-up">
-      <h2>Burgers</h2>
-      <div class="menu-grid">
-        <div class="menu-item"><span>Gyro Cheese Burger</span><span>$10.99</span></div>
-        <div class="menu-item"><span>Bacon Cheese Burger</span><span>$10.99</span></div>
-        <div class="menu-item"><span>Mushroom Cheese Burger</span><span>$10.99</span></div>
-        <div class="menu-item"><span>Egg Cheese Burger</span><span>$10.99</span></div>
-        <div class="menu-item"><span>Sausage Cheese Burger</span><span>$10.99</span></div>
-        <div class="menu-item"><span>Chili Cheese Burger</span><span>$10.99</span></div>
-        <div class="menu-item"><span>Avocado Cheese Burger</span><span>$10.99</span></div>
-      </div>
-    </section>
+  <!-- BURGERS -->
+  <section class="menu-section tab-content active" id="burgers" data-aos="fade-up">
+    <h2>Burgers</h2>
+    <div class="menu-grid">
+      <div class="menu-item"><span>Gyro Cheese Burger</span><span>$10.99</span></div>
+      <div class="menu-item"><span>Bacon Cheese Burger</span><span>$10.99</span></div>
+      <div class="menu-item"><span>Mushroom Cheese Burger</span><span>$10.99</span></div>
+    </div>
+  </section>
 
-    <!-- MEDITERRANEAN -->
-    <section class="menu-section" data-aos="fade-up">
-      <h2>Mediterranean Plates</h2>
-      <div class="menu-grid">
-        <div class="menu-item"><span>Gyro Plate</span><span>$11.99</span></div>
-        <div class="menu-item"><span>Falafel Plate</span><span>$10.99</span></div>
-        <div class="menu-item"><span>Chicken Shawarma</span><span>$11.99</span></div>
-      </div>
-    </section>
+  <!-- MEDITERRANEAN -->
+  <section class="menu-section tab-content" id="mediterranean" data-aos="fade-up">
+    <h2>Mediterranean Plates</h2>
+    <div class="menu-grid">
+      <div class="menu-item"><span>Gyro Plate</span><span>$11.99</span></div>
+      <div class="menu-item"><span>Falafel Plate</span><span>$10.99</span></div>
+    </div>
+  </section>
 
-    <!-- SIDES -->
-    <section class="menu-section" data-aos="fade-up">
-      <h2>Sides</h2>
-      <div class="menu-grid">
-        <div class="menu-item"><span>French Fries</span><span>$3.49</span></div>
-        <div class="menu-item"><span>Onion Rings</span><span>$3.99</span></div>
-        <div class="menu-item"><span>Side Salad</span><span>$3.99</span></div>
-        <div class="menu-item"><span>Rice</span><span>$2.49</span></div>
-        <div class="menu-item"><span>Pita Bread</span><span>$1.49</span></div>
-      </div>
-    </section>
-    
-    <!-- DRINKS -->
-    <section class="menu-section" data-aos="fade-up">
-      <h2>Drinks</h2>
-      <div class="menu-grid">
-        <div class="menu-item"><span>Soda</span><span>$1.99</span></div>
-        <div class="menu-item"><span>Iced Tea</span><span>$1.99</span></div>
-        <div class="menu-item"><span>Water Bottle</span><span>$1.00</span></div>
-      </div>
-    </section>
-  </main>
+  <!-- SIDES -->
+  <section class="menu-section tab-content" id="sides" data-aos="fade-up">
+    <h2>Sides</h2>
+    <div class="menu-grid">
+      <div class="menu-item"><span>French Fries</span><span>$3.49</span></div>
+      <div class="menu-item"><span>Onion Rings</span><span>$3.99</span></div>
+    </div>
+  </section>
 
-  <footer>
-    <p>&copy; 2025 Jumbo's Hamburgers — Tulsa, OK</p>
-  </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-  <script>
-    AOS.init();
-  </script>
-  <script src="js/script.js"></script>
-</body>
-</html>
+  <!-- DRINKS -->
+  <section class="menu-section tab-content" id="drinks" data-aos="fade-up">
+    <h2>Drinks</h2>
+    <div class="menu-grid">
+      <div class="menu-item"><span>Soda</span><span>$1.99</span></div>
+      <div class="menu-item"><span>Iced Tea</span><span>$1.99</span></div>
+    </div>
+  </section>
+</main>
