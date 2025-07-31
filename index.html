@@ -275,6 +275,38 @@
             color: #777;
             margin-bottom: 15px;
         }
+        
+        .menu-category {
+            margin-top: 60px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .menu-category h3 {
+            font-size: 2rem;
+            color: var(--primary);
+            display: inline-block;
+            padding: 0 20px;
+            position: relative;
+        }
+        
+        .menu-category h3::before,
+        .menu-category h3::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 50px;
+            height: 2px;
+            background-color: var(--secondary);
+        }
+        
+        .menu-category h3::before {
+            left: -60px;
+        }
+        
+        .menu-category h3::after {
+            right: -60px;
+        }
 
         /* About Section */
         .about {
@@ -443,6 +475,23 @@
             background-color: var(--secondary);
             transform: translateY(-3px);
         }
+        
+        .delivery-link {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 8px 15px;
+            background-color: var(--secondary);
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .delivery-link:hover {
+            background-color: #e69500;
+            transform: translateY(-2px);
+        }
 
         .copyright {
             text-align: center;
@@ -464,6 +513,19 @@
             
             .about-img {
                 order: -1;
+            }
+            
+            .menu-category h3::before,
+            .menu-category h3::after {
+                width: 30px;
+            }
+            
+            .menu-category h3::before {
+                left: -40px;
+            }
+            
+            .menu-category h3::after {
+                right: -40px;
             }
         }
 
@@ -505,6 +567,11 @@
             .btn-outline {
                 margin-left: 0;
             }
+            
+            .menu-category h3::before,
+            .menu-category h3::after {
+                display: none;
+            }
         }
 
         @media (max-width: 576px) {
@@ -522,6 +589,10 @@
             
             .section-title h2 {
                 font-size: 2rem;
+            }
+            
+            .menu-category h3 {
+                font-size: 1.8rem;
             }
         }
     </style>
@@ -554,7 +625,7 @@
             <h2>Jumbo Taste, Jumbo Satisfaction</h2>
             <p>Experience the juiciest, most flavorful burgers made with premium ingredients and served with a smile. Our passion for perfection is in every bite.</p>
             <a href="#menu" class="btn">View Our Menu</a>
-            <a href="#contact" class="btn btn-outline">Order Now</a>
+            <a href="https://www.grubhub.com/restaurant/jumbos-hamburgers-6558-e-41st-st-tulsa/6697448?utm_source=grubhub_web&utm_medium=content_owned&utm_campaign=menushare&utm_content=share-link" class="btn btn-outline" target="_blank">Order Delivery</a>
         </div>
     </section>
 
@@ -564,82 +635,927 @@
             <div class="section-title">
                 <h2>Our Delicious Menu</h2>
             </div>
+            
+            <!-- Burgers Category -->
+            <div class="menu-category">
+                <h3>BURGERS</h3>
+            </div>
             <div class="menu-grid">
                 <div class="menu-item">
                     <div class="menu-item-img">
-                        <img src="https://images.unsplash.com/photo-1553979459-d2229ba7433b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Classic Jumbo Burger">
+                        <img src="https://images.unsplash.com/photo-1553979459-d2229ba7433b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Gyro Cheese Burger">
                     </div>
                     <div class="menu-item-content">
                         <div class="menu-item-title">
-                            <h3>Classic Jumbo Burger</h3>
-                            <div class="menu-item-price">$12.99</div>
-                        </div>
-                        <p>Our signature beef patty with cheddar cheese, fresh lettuce, tomatoes, onions, and special sauce.</p>
-                    </div>
-                </div>
-                
-                <div class="menu-item">
-                    <div class="menu-item-img">
-                        <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Bacon Deluxe">
-                    </div>
-                    <div class="menu-item-content">
-                        <div class="menu-item-title">
-                            <h3>Bacon Deluxe</h3>
-                            <div class="menu-item-price">$14.99</div>
-                        </div>
-                        <p>Double beef patty, crispy bacon, smoked gouda, caramelized onions, and BBQ sauce.</p>
-                    </div>
-                </div>
-                
-                <div class="menu-item">
-                    <div class="menu-item-img">
-                        <img src="https://images.unsplash.com/photo-1596662951482-0c4ba74a6df6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Mushroom Swiss">
-                    </div>
-                    <div class="menu-item-content">
-                        <div class="menu-item-title">
-                            <h3>Mushroom Swiss</h3>
-                            <div class="menu-item-price">$13.99</div>
-                        </div>
-                        <p>Beef patty topped with sautéed mushrooms, Swiss cheese, and garlic aioli on a brioche bun.</p>
-                    </div>
-                </div>
-                
-                <div class="menu-item">
-                    <div class="menu-item-img">
-                        <img src="https://images.unsplash.com/photo-1603064752734-4c48eff53d05?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Spicy Chicken Burger">
-                    </div>
-                    <div class="menu-item-content">
-                        <div class="menu-item-title">
-                            <h3>Spicy Chicken Burger</h3>
-                            <div class="menu-item-price">$11.99</div>
-                        </div>
-                        <p>Crispy chicken breast with spicy mayo, coleslaw, and pickles on a sesame seed bun.</p>
-                    </div>
-                </div>
-                
-                <div class="menu-item">
-                    <div class="menu-item-img">
-                        <img src="https://images.unsplash.com/photo-1551615593-ef5fe247e8f7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Veggie Supreme">
-                    </div>
-                    <div class="menu-item-content">
-                        <div class="menu-item-title">
-                            <h3>Veggie Supreme</h3>
+                            <h3>Gyro Cheese Burger</h3>
                             <div class="menu-item-price">$10.99</div>
                         </div>
-                        <p>Homemade veggie patty with avocado, sprouts, tomato, and hummus on multigrain bread.</p>
+                        <p>Burger patty, topped with gyro meat, topped with mozzarella cheese. Taziki sauce.</p>
                     </div>
                 </div>
                 
                 <div class="menu-item">
                     <div class="menu-item-img">
-                        <img src="https://images.unsplash.com/photo-1586816001966-79b736744398?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Truffle Fries">
+                        <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Bacon Cheese Burger">
                     </div>
                     <div class="menu-item-content">
                         <div class="menu-item-title">
-                            <h3>Truffle Fries</h3>
+                            <h3>Bacon Cheese Burger</h3>
+                            <div class="menu-item-price">$10.99</div>
+                        </div>
+                        <p>Classic burger with crispy bacon and melted cheese.</p>
+                    </div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="menu-item-img">
+                        <img src="https://images.unsplash.com/photo-1596662951482-0c4ba74a6df6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Mushroom Cheese Burger">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-title">
+                            <h3>Mushroom Cheese Burger</h3>
+                            <div class="menu-item-price">$10.99</div>
+                        </div>
+                        <p>Juicy burger topped with sautéed mushrooms and melted cheese.</p>
+                    </div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="menu-item-img">
+                        <img src="https://images.unsplash.com/photo-1603064752734-4c48eff53d05?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Egg Cheese Burger">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-title">
+                            <h3>Egg Cheese Burger</h3>
+                            <div class="menu-item-price">$10.99</div>
+                        </div>
+                        <p>Burger topped with a fried egg and melted cheese.</p>
+                    </div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="menu-item-img">
+                        <img src="https://images.unsplash.com/photo-1551615593-ef5fe247e8f7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Sausage Cheese Burger">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-title">
+                            <h3>Sausage Cheese Burger</h3>
+                            <div class="menu-item-price">$10.99</div>
+                        </div>
+                        <p>Burger with sausage patty and melted cheese.</p>
+                    </div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="menu-item-img">
+                        <img src="https://images.unsplash.com/photo-1586816001966-79b736744398?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Chili Cheese Burger">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-title">
+                            <h3>Chili Cheese Burger</h3>
+                            <div class="menu-item-price">$10.99</div>
+                        </div>
+                        <p>Burger topped with homemade chili and melted cheese.</p>
+                    </div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="menu-item-img">
+                        <img src="https://images.unsplash.com/photo-1610440042657-612c34d95e9f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Avocado Cheese Burger">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-title">
+                            <h3>Avocado Cheese Burger</h3>
+                            <div class="menu-item-price">$10.99</div>
+                        </div>
+                        <p>Burger topped with fresh avocado slices and melted cheese.</p>
+                    </div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="menu-item-img">
+                        <img src="https://images.unsplash.com/photo-1596662951482-0c4ba74a6df6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Double Cheese Burger">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-title">
+                            <h3>Double Cheese Burger</h3>
+                            <div class="menu-item-price">$10.99</div>
+                        </div>
+                        <p>Two beef patties with double cheese for extra satisfaction.</p>
+                    </div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="menu-item-img">
+                        <img src="https://images.unsplash.com/photo-1565299507177-b0ac66763828?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Double Burger">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-title">
+                            <h3>Double Burger</h3>
+                            <div class="menu-item-price">$10.99</div>
+                        </div>
+                        <p>Two beef patties with classic toppings.</p>
+                    </div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="menu-item-img">
+                        <img src="https://images.unsplash.com/photo-1553979459-d2229ba7433b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Cheese Burger">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-title">
+                            <h3>Cheese Burger</h3>
+                            <div class="menu-item-price">$8.99</div>
+                        </div>
+                        <p>Classic beef patty with melted cheese.</p>
+                    </div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="menu-item-img">
+                        <img src="https://images.unsplash.com/photo-1603064752734-4c48eff53d05?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Hamburger">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-title">
+                            <h3>Hamburger</h3>
+                            <div class="menu-item-price">$7.99</div>
+                        </div>
+                        <p>Classic beef patty with fresh toppings.</p>
+                    </div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="menu-item-img">
+                        <img src="https://images.unsplash.com/photo-1610440042657-612c34d95e9f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Chicago Burger">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-title">
+                            <h3>Chicago Burger</h3>
+                            <div class="menu-item-price">$16.99</div>
+                        </div>
+                        <p>Burger patty + gyro meat + Bacon + egg + 2 kind cheese. Taziki as sauce. Including fries and drink!</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Chili's Category -->
+            <div class="menu-category">
+                <h3>CHILI'S</h3>
+            </div>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <div class="menu-item-img">
+                        <img src="https://images.unsplash.com/photo-1579628287174-29651b547b93?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Frito Pie">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-title">
+                            <h3>Frito Pie</h3>
+                            <div class="menu-item-price">$9.99</div>
+                        </div>
+                        <p>Fritos topped with homemade chili and cheese.</p>
+                    </div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="menu-item-img">
+                        <img src="https://images.unsplash.com/photo-1586816001966-79b736744398?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Chili Cheese Nachos">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-title">
+                            <h3>Chili Cheese Nachos</h3>
+                            <div class="menu-item-price">$9.99</div>
+                        </div>
+                        <p>Tortilla chips topped with chili, cheese, and jalapeños.</p>
+                    </div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="menu-item-img">
+                        <img src="https://images.unsplash.com/photo-1586816001966-79b736744398?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Chili Cheese French Fries">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-title">
+                            <h3>Chili Cheese French Fries</h3>
+                            <div class="menu-item-price">$9.99</div>
+                        </div>
+                        <p>Crispy fries topped with chili and melted cheese.</p>
+                    </div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="menu-item-img">
+                        <img src="https://images.unsplash.com/photo-1586816001966-79b736744398?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Chili Cheese Tater Tots">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-title">
+                            <h3>Chili Cheese Tater Tots</h3>
+                            <div class="menu-item-price">$9.99</div>
+                        </div>
+                        <p>Tater tots loaded with chili and cheese.</p>
+                    </div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="menu-item-img">
+                        <img src="https://images.unsplash.com/photo-1579628287174-29651b547b93?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Chili Bowl">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-title">
+                            <h3>Chili Bowl</h3>
                             <div class="menu-item-price">$5.99</div>
                         </div>
-                        <p>Crispy fries tossed with truffle oil, Parmesan cheese, and fresh herbs.</p>
+                        <p>Homemade chili served in a bowl.</p>
+                    </div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="menu-item-img">
+                        <img src="https://images.unsplash.com/photo-1554866585-cd94860890b7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Chili Cheese Dog">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-title">
+                            <h3>Chili Cheese Dog</h3>
+                            <div class="menu-item-price">$5.99</div>
+                        </div>
+                        <p>Hot dog topped with chili and melted cheese.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Dinners Category -->
+            <div class="menu-category">
+                <h3>DINNERS</h3>
+            </div>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <div class="menu-item-img">
+                        <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Daily Rice Platter">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-title">
+                            <h3>Daily Rice Platter</h3>
+                            <div class="menu-item-price">$17.99</div>
+                        </div>
+                        <p>Choice of grilled chicken or gyro meat served with rice.</p>
+                    </div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="menu-item-img">
+                        <img src="https://images.unsplash.com/photo-1562967914-608f82629710?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Boneless Chicken Dinner">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-title">
+                            <h3>Boneless Chicken Dinner</h3>
+                            <div class="menu-item-price">$13.99</div>
+                        </div>
+                        <p>3 Chicken strips with French fries OR Salad.</p>
+                    </div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="menu-item-img">
+                        <img src="https://images.unsplash.com/photo-1553979459-d2229ba7433b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Mexican Burger Dinner">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-title">
+                            <h3>Mexican Burger Dinner</h3>
+                            <div class="menu-item-price">$13.99</div>
+                        </div>
+                        <p>Spicy burger with Mexican flavors.</p>
+                    </div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="menu-item-img">
+                        <img src="https://images.unsplash.com/photo-1553979459-d2229ba7433b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Steak Burger Dinner">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-title">
+                            <h3>Steak Burger Dinner</h3>
+                            <div class="menu-item-price">$13.99</div>
+                        </div>
+                        <p>Premium steak burger with sides.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Subs Category -->
+            <div class="menu-category">
+                <h3>SUBS</h3>
+            </div>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <div class="menu-item-img">
+                        <img src="https://images.unsplash.com/photo-1503428593586-e225b39bddfe?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Philly Steak Sub">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-title">
+                            <h3>Philly Steak Sub</h3>
+                            <div class="menu-item-price">$11.99</div>
+                        </div>
+                        <p>Classic Philly cheesesteak sandwich.</p>
+                    </div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="menu-item-img">
+                        <img src="https://images.unsplash.com/photo-1565299507177-b0ac66763828?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Crispy Chicken Sub">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-title">
+                            <h3>Crispy Chicken Sub</h3>
+                            <div class="menu-item-price">$11.99</div>
+                        </div>
+                        <p>Crispy chicken breast with fresh toppings.</p>
+                    </div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="menu-item-img">
+                        <img src="https://images.unsplash.com/photo-1565299507177-b0ac66763828?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Grilled Chicken Sub">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-title">
+                            <h3>Grilled Chicken Sub</h3>
+                            <div class="menu-item-price">$11.99</div>
+                        </div>
+                        <p>Grilled chicken breast with fresh veggies.</p>
+                    </div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="menu-item-img">
+                        <img src="https://images.unsplash.com/photo-1503428593586-e225b39bddfe?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Super Sub">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-title">
+                            <h3>Super Sub</h3>
+                            <div class="menu-item-price">$11.99</div>
+                        </div>
+                        <p>Loaded sub with multiple meats and cheeses.</p>
+                    </div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="menu-item-img">
+                        <img src="https://images.unsplash.com/photo-1610440042657-612c34d95e9f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="3 Cheese Avocado Sub">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-title">
+                            <h3>3 Cheese Avocado Sub</h3>
+                            <div class="menu-item-price">$11.99</div>
+                        </div>
+                        <p>Three cheeses with fresh avocado slices.</p>
+                    </div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="menu-item-img">
+                        <img src="https://images.unsplash.com/photo-1610440042657-612c34d95e9f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Turkey & Cheese Sub">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-title">
+                            <h3>Turkey & Cheese Sub</h3>
+                            <div class="menu-item-price">$10.99</div>
+                        </div>
+                        <p>Fresh turkey breast with cheese and toppings.</p>
+                    </div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="menu-item-img">
+                        <img src="https://images.unsplash.com/photo-1610440042657-612c34d95e9f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Tuna Sub">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-title">
+                            <h3>Tuna Sub</h3>
+                            <div class="menu-item-price">$10.99</div>
+                        </div>
+                        <p>Tuna salad with fresh veggies on sub bread.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Grilled Sandwiches Category -->
+            <div class="menu-category">
+                <h3>GRILLED SANDWICHES</h3>
+            </div>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <div class="menu-item-img">
+                        <img src="https://images.unsplash.com/photo-1525351484163-7529414344d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Club B-H-T Sandwich">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-title">
+                            <h3>Club B-H-T Sandwich</h3>
+                            <div class="menu-item-price">$8.99</div>
+                        </div>
+                        <p>Bacon, ham, turkey with lettuce and tomato.</p>
+                    </div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="menu-item-img">
+                        <img src="https://images.unsplash.com/photo-1525351484163-7529414344d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Patty Melt">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-title">
+                            <h3>Patty Melt</h3>
+                            <div class="menu-item-price">$8.99</div>
+                        </div>
+                        <p>Beef patty with caramelized onions on rye bread.</p>
+                    </div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="menu-item-img">
+                        <img src="https://images.unsplash.com/photo-1525351484163-7529414344d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Chicken Fried Steak Sandwich">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-title">
+                            <h3>Chicken Fried Steak Sandwich</h3>
+                            <div class="menu-item-price">$8.99</div>
+                        </div>
+                        <p>Breaded steak with gravy on a bun.</p>
+                    </div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="menu-item-img">
+                        <img src="https://images.unsplash.com/photo-1525351484163-7529414344d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Turkey & Cheese Sandwich">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-title">
+                            <h3>Turkey & Cheese Sandwich</h3>
+                            <div class="menu-item-price">$8.99</div>
+                        </div>
+                        <p>Grilled turkey and cheese sandwich.</p>
+                    </div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="menu-item-img">
+                        <img src="https://images.unsplash.com/photo-1525351484163-7529414344d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="BLT Sandwich">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-title">
+                            <h3>BLT Sandwich</h3>
+                            <div class="menu-item-price">$8.99</div>
+                        </div>
+                        <p>Bacon, lettuce, and tomato on toasted bread.</p>
+                    </div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="menu-item-img">
+                        <img src="https://images.unsplash.com/photo-1525351484163-7529414344d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Grilled Cheese Sandwich">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-title">
+                            <h3>Grilled Cheese Sandwich</h3>
+                            <div class="menu-item-price">$4.99</div>
+                        </div>
+                        <p>Classic melted cheese on grilled bread.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Kids Category -->
+            <div class="menu-category">
+                <h3>JUST FOR KIDS :)</h3>
+            </div>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <div class="menu-item-img">
+                        <img src="https://images.unsplash.com/photo-1554866585-cd94860890b7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Kids Hot Dog">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-title">
+                            <h3>Kids Hot Dog</h3>
+                            <div class="menu-item-price">$7.99</div>
+                        </div>
+                        <p>Includes fries or chips w/drink!</p>
+                    </div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="menu-item-img">
+                        <img src="https://images.unsplash.com/photo-1553979459-d2229ba7433b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Kids Hamburger">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-title">
+                            <h3>Kids Hamburger</h3>
+                            <div class="menu-item-price">$7.99</div>
+                        </div>
+                        <p>Includes fries or chips w/drink!</p>
+                    </div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="menu-item-img">
+                        <img src="https://images.unsplash.com/photo-1553979459-d2229ba7433b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Kids Cheese Burger">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-title">
+                            <h3>Kids Cheese Burger</h3>
+                            <div class="menu-item-price">$7.99</div>
+                        </div>
+                        <p>Includes fries or chips w/drink!</p>
+                    </div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="menu-item-img">
+                        <img src="https://images.unsplash.com/photo-1562967914-608f82629710?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Kids Chicken Nuggets">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-title">
+                            <h3>Kids Chicken Nuggets</h3>
+                            <div class="menu-item-price">$7.99</div>
+                        </div>
+                        <p>Includes fries or chips w/drink!</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Desserts Category -->
+            <div class="menu-category">
+                <h3>DESSERTS</h3>
+            </div>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <div class="menu-item-img">
+                        <img src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Baklava">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-title">
+                            <h3>Baklava</h3>
+                            <div class="menu-item-price">$2.99</div>
+                        </div>
+                        <p>Sweet pastry with nuts and honey.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Drinks Category -->
+            <div class="menu-category">
+                <h3>DRINKS</h3>
+            </div>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <div class="menu-item-img">
+                        <img src="https://images.unsplash.com/photo-1554866585-cd94860890b7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Fountain Drinks">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-title">
+                            <h3>Fountain Drinks 20 Oz</h3>
+                            <div class="menu-item-price">$3.50</div>
+                        </div>
+                        <p>Pepsi - Diet Pepsi - Mountain Dew - Crush Orange - Tropicana Lemonade - Starry - Dr Pepper - Diet Dr Pepper</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Salads Category -->
+            <div class="menu-category">
+                <h3>SALADS</h3>
+            </div>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <div class="menu-item-img">
+                        <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Chef Salad">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-title">
+                            <h3>Chef Salad</h3>
+                            <div class="menu-item-price">$13.00</div>
+                        </div>
+                        <p>Mixed greens with meats and cheeses.</p>
+                    </div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="menu-item-img">
+                        <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Chicken Salad">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-title">
+                            <h3>Chicken Salad</h3>
+                            <div class="menu-item-price">$13.00</div>
+                        </div>
+                        <p>Grilled chicken on mixed greens.</p>
+                    </div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="menu-item-img">
+                        <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Avocado Salad">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-title">
+                            <h3>Avocado Salad</h3>
+                            <div class="menu-item-price">$13.00</div>
+                        </div>
+                        <p>Fresh avocado on mixed greens.</p>
+                    </div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="menu-item-img">
+                        <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Tuna Salad">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-title">
+                            <h3>Tuna Salad</h3>
+                            <div class="menu-item-price">$13.00</div>
+                        </div>
+                        <p>Tuna salad on fresh greens.</p>
+                    </div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="menu-item-img">
+                        <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Taco Salad">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-title">
+                            <h3>Taco Salad</h3>
+                            <div class="menu-item-price">$13.00</div>
+                        </div>
+                        <p>Mexican-style salad with taco ingredients.</p>
+                    </div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="menu-item-img">
+                        <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Gyro Salad">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-title">
+                            <h3>Gyro Salad</h3>
+                            <div class="menu-item-price">$13.00</div>
+                        </div>
+                        <p>Gyro meat on fresh greens with tzatziki.</p>
+                    </div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="menu-item-img">
+                        <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Crispy Chicken Salad">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-title">
+                            <h3>Crispy Chicken Salad</h3>
+                            <div class="menu-item-price">$13.00</div>
+                        </div>
+                        <p>Crispy chicken on mixed greens.</p>
+                    </div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="menu-item-img">
+                        <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Greek Salad">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-title">
+                            <h3>Greek Salad</h3>
+                            <div class="menu-item-price">$13.00</div>
+                        </div>
+                        <p>Traditional Greek salad with feta and olives.</p>
+                    </div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="menu-item-img">
+                        <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Green Salad">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-title">
+                            <h3>Green Salad</h3>
+                            <div class="menu-item-price">$11.99</div>
+                        </div>
+                        <p>Fresh mixed greens with dressing.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Mediterranean Food Category -->
+            <div class="menu-category">
+                <h3>MEDITERRANEAN FOOD</h3>
+            </div>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <div class="menu-item-img">
+                        <img src="https://images.unsplash.com/photo-1625938143774-7f5a6ddb1a16?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Gyro">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-title">
+                            <h3>Gyro</h3>
+                            <div class="menu-item-price">$10.99</div>
+                        </div>
+                        <p>Traditional gyro with tzatziki sauce.</p>
+                    </div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="menu-item-img">
+                        <img src="https://images.unsplash.com/photo-1625938143774-7f5a6ddb1a16?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Chicken Gyro">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-title">
+                            <h3>Chicken Gyro</h3>
+                            <div class="menu-item-price">$10.99</div>
+                        </div>
+                        <p>Grilled chicken gyro with tzatziki sauce.</p>
+                    </div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="menu-item-img">
+                        <img src="https://images.unsplash.com/photo-1625938143774-7f5a6ddb1a16?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Falafel">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-title">
+                            <h3>Falafel</h3>
+                            <div class="menu-item-price">$10.99</div>
+                        </div>
+                        <p>Crispy falafel balls with tahini sauce.</p>
+                    </div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="menu-item-img">
+                        <img src="https://images.unsplash.com/photo-1625938143774-7f5a6ddb1a16?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Hummus & Pita Bread">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-title">
+                            <h3>Hummus & Pita Bread</h3>
+                            <div class="menu-item-price">$7.99</div>
+                        </div>
+                        <p>Creamy hummus with warm pita bread.</p>
+                    </div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="menu-item-img">
+                        <img src="https://images.unsplash.com/photo-1625938143774-7f5a6ddb1a16?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Tabouli">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-title">
+                            <h3>Tabouli</h3>
+                            <div class="menu-item-price">$5.99</div>
+                        </div>
+                        <p>Fresh parsley salad with bulgur wheat.</p>
+                    </div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="menu-item-img">
+                        <img src="https://images.unsplash.com/photo-1625938143774-7f5a6ddb1a16?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Grape Leaves">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-title">
+                            <h3>Grape Leaves</h3>
+                            <div class="menu-item-price">$5.99</div>
+                        </div>
+                        <p>Stuffed grape leaves with rice and herbs.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Sides Category -->
+            <div class="menu-category">
+                <h3>SIDES</h3>
+            </div>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <div class="menu-item-img">
+                        <img src="https://images.unsplash.com/photo-1586816001966-79b736744398?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Extra Meat">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-title">
+                            <h3>Extra Meat</h3>
+                            <div class="menu-item-price">$3.99</div>
+                        </div>
+                        <p>Add extra meat to any dish.</p>
+                    </div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="menu-item-img">
+                        <img src="https://images.unsplash.com/photo-1586816001966-79b736744398?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Side Meat">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-title">
+                            <h3>Side Meat (Gyro / Grilled Chicken)</h3>
+                            <div class="menu-item-price">$7.99</div>
+                        </div>
+                        <p>Side of gyro or grilled chicken.</p>
+                    </div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="menu-item-img">
+                        <img src="https://images.unsplash.com/photo-1586816001966-79b736744398?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Okra">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-title">
+                            <h3>Okra</h3>
+                            <div class="menu-item-price">$4.99</div>
+                        </div>
+                        <p>Fried okra side dish.</p>
+                    </div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="menu-item-img">
+                        <img src="https://images.unsplash.com/photo-1586816001966-79b736744398?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Tater Tots">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-title">
+                            <h3>Tater Tots</h3>
+                            <div class="menu-item-price">$4.99</div>
+                        </div>
+                        <p>Crispy tater tots.</p>
+                    </div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="menu-item-img">
+                        <img src="https://images.unsplash.com/photo-1586816001966-79b736744398?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Onion Rings">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-title">
+                            <h3>Onion Rings</h3>
+                            <div class="menu-item-price">$5.99</div>
+                        </div>
+                        <p>Crispy battered onion rings.</p>
+                    </div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="menu-item-img">
+                        <img src="https://images.unsplash.com/photo-1586816001966-79b736744398?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="French Fries">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-title">
+                            <h3>French Fries</h3>
+                            <div class="menu-item-price">$3.50</div>
+                        </div>
+                        <p>Classic french fries.</p>
+                    </div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="menu-item-img">
+                        <img src="https://images.unsplash.com/photo-1586816001966-79b736744398?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Fried Mushrooms">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-title">
+                            <h3>Fried Mushrooms</h3>
+                            <div class="menu-item-price">$6.99</div>
+                        </div>
+                        <p>Battered and fried mushrooms.</p>
+                    </div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="menu-item-img">
+                        <img src="https://images.unsplash.com/photo-1586816001966-79b736744398?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Dill Pickle">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-title">
+                            <h3>Dill Pickle</h3>
+                            <div class="menu-item-price">$2.49</div>
+                        </div>
+                        <p>Large dill pickle spear.</p>
+                    </div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="menu-item-img">
+                        <img src="https://images.unsplash.com/photo-1586816001966-79b736744398?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Chips">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-title">
+                            <h3>Chips</h3>
+                            <div class="menu-item-price">$1.49</div>
+                        </div>
+                        <p>Bag of potato chips.</p>
+                    </div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="menu-item-img">
+                        <img src="https://images.unsplash.com/photo-1586816001966-79b736744398?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Pita Bread">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-title">
+                            <h3>Pita Bread</h3>
+                            <div class="menu-item-price">$2.50</div>
+                        </div>
+                        <p>Warm pita bread.</p>
                     </div>
                 </div>
             </div>
@@ -677,14 +1593,14 @@
                         <i class="fas fa-map-marker-alt"></i>
                         <div>
                             <h4>Our Location</h4>
-                            <p>123 Burger Street, Foodie District, Tasty City 12345</p>
+                            <p>6558 E 41st St, Tulsa, OK 74145</p>
                         </div>
                     </div>
                     <div class="contact-detail">
                         <i class="fas fa-phone-alt"></i>
                         <div>
                             <h4>Phone Number</h4>
-                            <p>(555) 123-4567</p>
+                            <p>(918) 663-0944</p>
                         </div>
                     </div>
                     <div class="contact-detail">
@@ -698,8 +1614,13 @@
                         <i class="fas fa-clock"></i>
                         <div>
                             <h4>Opening Hours</h4>
-                            <p>Monday - Friday: 11:00 AM - 10:00 PM</p>
-                            <p>Saturday - Sunday: 10:00 AM - 11:00 PM</p>
+                            <p>Monday: 10:00 AM - 7:00 PM</p>
+                            <p>Tuesday: 10:00 AM - 7:00 PM</p>
+                            <p>Wednesday: 10:00 AM - 7:00 PM</p>
+                            <p>Thursday: 10:00 AM - 7:00 PM</p>
+                            <p>Friday: 10:00 AM - 7:00 PM</p>
+                            <p>Saturday: 11:00 AM - 7:00 PM</p>
+                            <p>Sunday: Closed</p>
                         </div>
                     </div>
                 </div>
@@ -732,11 +1653,12 @@
                 <div class="footer-col">
                     <h4>Jumbo's Hamburgers</h4>
                     <p>Home of the juiciest, most flavorful burgers in town. We're passionate about quality ingredients and exceptional taste.</p>
+                    <a href="https://www.grubhub.com/restaurant/jumbos-hamburgers-6558-e-41st-st-tulsa/6697448?utm_source=grubhub_web&utm_medium=content_owned&utm_campaign=menushare&utm_content=share-link" class="delivery-link" target="_blank">Order Delivery via Grubhub</a>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.yelp.com/biz/jumbo-hamburgers-tulsa-4?utm_campaign=www_business_share_popup&utm_medium=copy_link&utm_source=(direct)" target="_blank"><i class="fab fa-yelp"></i></a>
+                        <a href="https://www.tiktok.com/" target="_blank"><i class="fab fa-tiktok"></i></a>
                     </div>
                 </div>
                 <div class="footer-col">
@@ -752,9 +1674,13 @@
                 <div class="footer-col">
                     <h4>Opening Hours</h4>
                     <ul>
-                        <li>Monday - Friday: 11:00 AM - 10:00 PM</li>
-                        <li>Saturday: 10:00 AM - 11:00 PM</li>
-                        <li>Sunday: 10:00 AM - 10:00 PM</li>
+                        <li>Monday: 10:00 AM - 7:00 PM</li>
+                        <li>Tuesday: 10:00 AM - 7:00 PM</li>
+                        <li>Wednesday: 10:00 AM - 7:00 PM</li>
+                        <li>Thursday: 10:00 AM - 7:00 PM</li>
+                        <li>Friday: 10:00 AM - 7:00 PM</li>
+                        <li>Saturday: 11:00 AM - 7:00 PM</li>
+                        <li>Sunday: Closed</li>
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -769,7 +1695,7 @@
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2023 Jumbo's Hamburgers. All Rights Reserved.</p>
+                <p>&copy; 2025 Jumbo's Hamburgers. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
