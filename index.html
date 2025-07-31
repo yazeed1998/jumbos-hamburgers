@@ -1,158 +1,813 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Jumbo’s Hamburgers | Home</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jumbo's Hamburgers - Premium Burgers & Fries</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-  <!-- your main stylesheet -->
-  <link rel="stylesheet" href="css/style.css"/>
+        :root {
+            --primary: #e74c3c;
+            --secondary: #f39c12;
+            --dark: #2c3e50;
+            --light: #ecf0f1;
+            --text: #34495e;
+        }
 
-  <!-- fonts & icons -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"/>
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: var(--text);
+            background-color: #f9f9f9;
+            line-height: 1.6;
+        }
 
-  <!-- AOS animations -->
-  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet"/>
+        h1, h2, h3, h4 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            color: var(--dark);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 50px;
+            margin-right: 15px;
+        }
+
+        .logo h1 {
+            font-size: 1.8rem;
+            color: var(--primary);
+        }
+
+        .logo span {
+            color: var(--secondary);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 25px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary);
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            transition: width 0.3s;
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--dark);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1565299507177-b0ac66763828?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .hero h2 {
+            font-size: 3.5rem;
+            color: white;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            border: 2px solid var(--primary);
+        }
+
+        .btn:hover {
+            background-color: transparent;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid white;
+            margin-left: 15px;
+        }
+
+        .btn-outline:hover {
+            background-color: white;
+            color: var(--primary);
+        }
+
+        /* Menu Section */
+        .section-title {
+            text-align: center;
+            margin: 50px 0 30px;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            display: inline-block;
+            background: white;
+            padding: 0 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background-color: var(--secondary);
+            z-index: 0;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .menu-item {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .menu-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+
+        .menu-item-img {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .menu-item-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .menu-item:hover .menu-item-img img {
+            transform: scale(1.1);
+        }
+
+        .menu-item-content {
+            padding: 20px;
+        }
+
+        .menu-item-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .menu-item-title h3 {
+            font-size: 1.4rem;
+            color: var(--primary);
+        }
+
+        .menu-item-price {
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: var(--secondary);
+        }
+
+        .menu-item p {
+            color: #777;
+            margin-bottom: 15px;
+        }
+
+        /* About Section */
+        .about {
+            background-color: var(--light);
+            padding: 80px 0;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+        }
+
+        .about-img {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .about-img img {
+            width: 100%;
+            display: block;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 80px 0;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .contact-info, .contact-form {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .contact-info h3, .contact-form h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+
+        .contact-detail {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .contact-detail i {
+            font-size: 1.5rem;
+            color: var(--secondary);
+            margin-right: 15px;
+            min-width: 30px;
+        }
+
+        .contact-form .form-group {
+            margin-bottom: 20px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 1rem;
+        }
+
+        .contact-form textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 50px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-col h4::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--secondary);
+        }
+
+        .footer-col p, .footer-col li {
+            color: #bbb;
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: #bbb;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--secondary);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            color: white;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background-color: var(--secondary);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #bbb;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero h2 {
+                font-size: 3rem;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-img {
+                order: -1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            }
+            
+            nav ul.show {
+                display: flex;
+            }
+            
+            nav ul li {
+                margin: 10px 0;
+            }
+            
+            .hero h2 {
+                font-size: 2.5rem;
+            }
+            
+            .btn {
+                display: block;
+                margin: 10px auto;
+                max-width: 250px;
+            }
+            
+            .btn-outline {
+                margin-left: 0;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .logo h1 {
+                font-size: 1.5rem;
+            }
+            
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
 </head>
 <body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="https://cdn-icons-png.flaticon.com/512/5787/5787016.png" alt="Jumbo's Hamburgers Logo">
+                <h1>Jumbo's <span>Hamburgers</span></h1>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav>
+                <ul id="navMenu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-  <!-- SITE HEADER / NAV -->
-  <header class="site-header">
-  <nav class="navbar">
-    <div class="container">
-      <div class="logo">Jumbo’s Hamburgers</div>
-      <div class="hamburger" id="hamburger">&#9776;</div>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="index.html" class="active">Home</a></li>
-        <li class="nav-item dropdown">
-          <a href="#" class="dropbtn">
-            Menu <i class="fas fa-caret-down"></i>
-          </a>
-          <ul class="dropdown">
-            <li><a href="menu.html#burgers">Burgers</a></li>
-            <li><a href="menu.html#chilis">Chilis &amp; Dinners</a></li>
-            <li><a href="menu.html#subs">Subs &amp; Sandwiches</a></li>
-            <li><a href="menu.html#kids">Kids Meals</a></li>
-            <li><a href="menu.html#mediterranean">Mediterranean</a></li>
-            <li><a href="menu.html#salads">Salads</a></li>
-            <li><a href="menu.html#sides">Sides</a></li>
-            <li><a href="menu.html#desserts">Desserts &amp; Drinks</a></li>
-          </ul>
-        </li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li>
-          <a href="https://instagram.com/jumboshamburgers" target="_blank">
-            <i class="fab fa-instagram"></i>
-          </a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-</header>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h2>Jumbo Taste, Jumbo Satisfaction</h2>
+            <p>Experience the juiciest, most flavorful burgers made with premium ingredients and served with a smile. Our passion for perfection is in every bite.</p>
+            <a href="#menu" class="btn">View Our Menu</a>
+            <a href="#contact" class="btn btn-outline">Order Now</a>
+        </div>
+    </section>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-overlay container">
-      <h1 data-aos="fade-up">Big Flavor.<br/>Even Bigger Burgers.</h1>
-      <p data-aos="fade-up" data-aos-delay="100">Tulsa’s Favorite Since 1978</p>
-      <a href="menu.html" class="btn" data-aos="fade-up" data-aos-delay="200">Explore Our Menu</a>
-    </div>
-  </section>
+    <!-- Menu Section -->
+    <section class="menu" id="menu">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Delicious Menu</h2>
+            </div>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <div class="menu-item-img">
+                        <img src="https://images.unsplash.com/photo-1553979459-d2229ba7433b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Classic Jumbo Burger">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-title">
+                            <h3>Classic Jumbo Burger</h3>
+                            <div class="menu-item-price">$12.99</div>
+                        </div>
+                        <p>Our signature beef patty with cheddar cheese, fresh lettuce, tomatoes, onions, and special sauce.</p>
+                    </div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="menu-item-img">
+                        <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Bacon Deluxe">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-title">
+                            <h3>Bacon Deluxe</h3>
+                            <div class="menu-item-price">$14.99</div>
+                        </div>
+                        <p>Double beef patty, crispy bacon, smoked gouda, caramelized onions, and BBQ sauce.</p>
+                    </div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="menu-item-img">
+                        <img src="https://images.unsplash.com/photo-1596662951482-0c4ba74a6df6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Mushroom Swiss">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-title">
+                            <h3>Mushroom Swiss</h3>
+                            <div class="menu-item-price">$13.99</div>
+                        </div>
+                        <p>Beef patty topped with sautéed mushrooms, Swiss cheese, and garlic aioli on a brioche bun.</p>
+                    </div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="menu-item-img">
+                        <img src="https://images.unsplash.com/photo-1603064752734-4c48eff53d05?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Spicy Chicken Burger">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-title">
+                            <h3>Spicy Chicken Burger</h3>
+                            <div class="menu-item-price">$11.99</div>
+                        </div>
+                        <p>Crispy chicken breast with spicy mayo, coleslaw, and pickles on a sesame seed bun.</p>
+                    </div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="menu-item-img">
+                        <img src="https://images.unsplash.com/photo-1551615593-ef5fe247e8f7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Veggie Supreme">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-title">
+                            <h3>Veggie Supreme</h3>
+                            <div class="menu-item-price">$10.99</div>
+                        </div>
+                        <p>Homemade veggie patty with avocado, sprouts, tomato, and hummus on multigrain bread.</p>
+                    </div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="menu-item-img">
+                        <img src="https://images.unsplash.com/photo-1586816001966-79b736744398?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Truffle Fries">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-title">
+                            <h3>Truffle Fries</h3>
+                            <div class="menu-item-price">$5.99</div>
+                        </div>
+                        <p>Crispy fries tossed with truffle oil, Parmesan cheese, and fresh herbs.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <!-- OUR STORY -->
-  <section class="story container" data-aos="fade-up">
-    <div class="story-content">
-      <h2>Our Story</h2>
-      <p>Since opening our doors in 1978, Jumbo’s Hamburgers has been a beloved Tulsa tradition—serving up homemade‐style burgers, hearty chilis, and Mediterranean plates infused with authentic flavor.</p>
-      <a href="about.html" class="btn btn-secondary">Read More</a>
-    </div>
-    <div class="story-image">
-      <img src="https://source.unsplash.com/800x600/?restaurant,kitchen" alt="Jumbo’s kitchen"/>
-    </div>
-  </section>
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Our Story</h2>
+                    <p>Founded in 2010, Jumbo's Hamburgers started as a small family-owned food truck with a passion for creating the perfect burger. What began as a humble venture quickly grew into a beloved local institution.</p>
+                    <p>We believe in using only the finest ingredients - locally sourced beef, fresh produce, and artisanal buns baked daily. Our commitment to quality and flavor has earned us multiple awards and a loyal following.</p>
+                    <p>At Jumbo's, we're not just serving burgers - we're creating memorable experiences. Every burger is crafted with care and cooked to perfection. Come taste the difference that passion makes!</p>
+                    <a href="#contact" class="btn">Visit Us</a>
+                </div>
+                <div class="about-img">
+                    <img src="https://images.unsplash.com/photo-1554679665-f5537f187268?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Jumbo's Hamburgers Interior">
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <!-- ORDER & VISIT TEASER -->
-  <section class="teaser container" data-aos="fade-up">
-    <div class="teaser-cards">
-      <div class="card">
-        <i class="fas fa-shopping-bag fa-2x"></i>
-        <h3>Order Online</h3>
-        <p>Get your favorites delivered hot and fresh.</p>
-        <a href="#" class="btn-link">Order Now</a>
-      </div>
-      <div class="card">
-        <i class="fas fa-utensils fa-2x"></i>
-        <h3>Dine In</h3>
-        <p>Enjoy a cozy meal in our classic Tulsa spot.</p>
-        <a href="contact.html#hours" class="btn-link">View Hours</a>
-      </div>
-      <div class="card">
-        <i class="fas fa-map-marker-alt fa-2x"></i>
-        <h3>Visit Us</h3>
-        <p>6558 E 41st St, Tulsa, OK 74145</p>
-        <a href="contact.html#map" class="btn-link">Get Directions</a>
-      </div>
-    </div>
-  </section>
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Us</h2>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    <div class="contact-detail">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Our Location</h4>
+                            <p>123 Burger Street, Foodie District, Tasty City 12345</p>
+                        </div>
+                    </div>
+                    <div class="contact-detail">
+                        <i class="fas fa-phone-alt"></i>
+                        <div>
+                            <h4>Phone Number</h4>
+                            <p>(555) 123-4567</p>
+                        </div>
+                    </div>
+                    <div class="contact-detail">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email Address</h4>
+                            <p>info@jumboshamburgers.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-detail">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4>Opening Hours</h4>
+                            <p>Monday - Friday: 11:00 AM - 10:00 PM</p>
+                            <p>Saturday - Sunday: 10:00 AM - 11:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Send Us a Message</h3>
+                    <form>
+                        <div class="form-group">
+                            <input type="text" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" placeholder="Your Phone">
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <!-- FEATURED FAVORITES -->
-  <section class="featured container" data-aos="fade-up">
-    <h2>Customer Favorites</h2>
-    <div class="grid">
-      <div class="card">
-        <img src="https://source.unsplash.com/400x300/?burger,bacon" alt="Bacon Cheeseburger"/>
-        <h3>Bacon Cheeseburger</h3>
-      </div>
-      <div class="card">
-        <img src="https://source.unsplash.com/400x300/?gyro,burger" alt="Gyro Burger"/>
-        <h3>Gyro Burger</h3>
-      </div>
-      <div class="card">
-        <img src="https://source.unsplash.com/400x300/?mediterranean,plate" alt="Mediterranean Plate"/>
-        <h3>Mediterranean Plate</h3>
-      </div>
-    </div>
-  </section>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Jumbo's Hamburgers</h4>
+                    <p>Home of the juiciest, most flavorful burgers in town. We're passionate about quality ingredients and exceptional taste.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#menu">Menu</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Opening Hours</h4>
+                    <ul>
+                        <li>Monday - Friday: 11:00 AM - 10:00 PM</li>
+                        <li>Saturday: 10:00 AM - 11:00 PM</li>
+                        <li>Sunday: 10:00 AM - 10:00 PM</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe to get special offers and updates</p>
+                    <form>
+                        <div class="form-group">
+                            <input type="email" placeholder="Your Email" required>
+                        </div>
+                        <button type="submit" class="btn">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Jumbo's Hamburgers. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
 
-  <!-- socials -->
-
-  <section class="instagram container" data-aos="fade-up">
-  <h2>Follow Us on Instagram</h2>
-  <div class="insta-grid">
-    <a href="https://instagram.com/jumboshamburgers" target="_blank">
-      <img src="https://source.unsplash.com/300x300/?burger,food"
-           alt="Instagram post" loading="lazy"/>
-    </a>
-    <a href="https://instagram.com/jumboshamburgers" target="_blank">
-      <img src="https://source.unsplash.com/300x300/?fries"
-           alt="Instagram post" loading="lazy"/>
-    </a>
-    <a href="https://instagram.com/jumboshamburgers" target="_blank">
-      <img src="https://source.unsplash.com/300x300/?salad"
-           alt="Instagram post" loading="lazy"/>
-    </a>
-    <a href="https://instagram.com/jumboshamburgers" target="_blank">
-      <img src="https://source.unsplash.com/300x300/?dessert"
-           alt="Instagram post" loading="lazy"/>
-    </a>
-  </div>
-</section>
-
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="container">
-      <p>&copy; 2025 Jumbo’s Hamburgers — Tulsa, OK</p>
-    </div>
-  </footer>
-
-  <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-  <script>
-    AOS.init();
-  </script>
-  <script src="js/script.js"></script>
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navMenu = document.getElementById('navMenu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('show');
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+                
+                // Close mobile menu if open
+                if (navMenu.classList.contains('show')) {
+                    navMenu.classList.remove('show');
+                }
+            });
+        });
+        
+        // Sticky header
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            header.classList.toggle('sticky', window.scrollY > 0);
+        });
+    </script>
 </body>
 </html>
