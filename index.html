@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
+        /* ===== BASE STYLES ===== */
         * {
             margin: 0;
             padding: 0;
@@ -41,7 +42,38 @@
             padding: 0 20px;
         }
 
-        /* Header & Navigation */
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            border: 2px solid var(--primary);
+        }
+
+        .btn:hover {
+            background-color: transparent;
+            color: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid white;
+            margin-left: 15px;
+        }
+
+        .btn-outline:hover {
+            background-color: white;
+            color: var(--primary);
+        }
+
+        /* ===== HEADER & NAVIGATION ===== */
         header {
             background-color: white;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
@@ -122,7 +154,7 @@
             color: var(--dark);
         }
 
-        /* Hero Section */
+        /* ===== HERO SECTION ===== */
         .hero {
             background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1565299507177-b0ac66763828?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80');
             background-size: cover;
@@ -155,38 +187,7 @@
             margin-right: auto;
         }
 
-        .btn {
-            display: inline-block;
-            background-color: var(--primary);
-            color: white;
-            padding: 12px 30px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: all 0.3s;
-            border: 2px solid var(--primary);
-        }
-
-        .btn:hover {
-            background-color: transparent;
-            color: white;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-
-        .btn-outline {
-            background-color: transparent;
-            border: 2px solid white;
-            margin-left: 15px;
-        }
-
-        .btn-outline:hover {
-            background-color: white;
-            color: var(--primary);
-        }
-
-        /* Menu Section */
+        /* ===== MENU SECTION ===== */
         .section-title {
             text-align: center;
             margin: 50px 0 30px;
@@ -213,102 +214,94 @@
             z-index: 0;
         }
 
-        .menu-grid {
+        .menu-category-selector {
+            margin: 30px auto;
+            text-align: center;
+            max-width: 600px;
+        }
+
+        .menu-category-selector select {
+            width: 100%;
+            padding: 12px 20px;
+            font-size: 1.1rem;
+            border-radius: 30px;
+            border: 2px solid var(--secondary);
+            background-color: white;
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23f39c12' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            background-size: 1.2em;
+        }
+
+        .menu-category {
+            display: none;
+            margin-top: 40px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .menu-category.active {
+            display: block;
+        }
+
+        .menu-category-title {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--secondary);
+        }
+
+        .menu-category-title h3 {
+            font-size: 1.8rem;
+            color: var(--primary);
+        }
+
+        .menu-items {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin: 40px 0;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
         }
 
         .menu-item {
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            padding: 15px;
+            border-radius: 8px;
+            background-color: #fff;
             transition: transform 0.3s, box-shadow 0.3s;
         }
 
         .menu-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
-        }
-
-        .menu-item-img {
-            height: 200px;
-            overflow: hidden;
-        }
-
-        .menu-item-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s;
-        }
-
-        .menu-item:hover .menu-item-img img {
-            transform: scale(1.1);
-        }
-
-        .menu-item-content {
-            padding: 20px;
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
         }
 
         .menu-item-title {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
-        .menu-item-title h3 {
-            font-size: 1.4rem;
+        .menu-item-title h4 {
+            font-size: 1.3rem;
             color: var(--primary);
         }
 
         .menu-item-price {
             font-weight: 700;
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             color: var(--secondary);
         }
 
         .menu-item p {
             color: #777;
-            margin-bottom: 15px;
-        }
-        
-        .menu-category {
-            margin-top: 60px;
-            margin-bottom: 30px;
-            text-align: center;
-        }
-        
-        .menu-category h3 {
-            font-size: 2rem;
-            color: var(--primary);
-            display: inline-block;
-            padding: 0 20px;
-            position: relative;
-        }
-        
-        .menu-category h3::before,
-        .menu-category h3::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            width: 50px;
-            height: 2px;
-            background-color: var(--secondary);
-        }
-        
-        .menu-category h3::before {
-            left: -60px;
-        }
-        
-        .menu-category h3::after {
-            right: -60px;
+            font-size: 0.95rem;
         }
 
-        /* About Section */
+        /* ===== ABOUT SECTION ===== */
         .about {
             background-color: var(--light);
             padding: 80px 0;
@@ -342,7 +335,7 @@
             display: block;
         }
 
-        /* Contact Section */
+        /* ===== CONTACT SECTION ===== */
         .contact {
             padding: 80px 0;
         }
@@ -353,14 +346,14 @@
             gap: 40px;
         }
 
-        .contact-info, .contact-form {
+        .contact-info {
             background: white;
             padding: 30px;
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
 
-        .contact-info h3, .contact-form h3 {
+        .contact-info h3 {
             font-size: 1.8rem;
             margin-bottom: 20px;
             color: var(--primary);
@@ -379,26 +372,7 @@
             min-width: 30px;
         }
 
-        .contact-form .form-group {
-            margin-bottom: 20px;
-        }
-
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-family: 'Roboto', sans-serif;
-            font-size: 1rem;
-        }
-
-        .contact-form textarea {
-            height: 150px;
-            resize: vertical;
-        }
-
-        /* Footer */
+        /* ===== FOOTER ===== */
         footer {
             background-color: var(--dark);
             color: white;
@@ -475,7 +449,7 @@
             background-color: var(--secondary);
             transform: translateY(-3px);
         }
-        
+
         .delivery-link {
             display: inline-block;
             margin-top: 15px;
@@ -487,7 +461,7 @@
             font-weight: 600;
             transition: all 0.3s;
         }
-        
+
         .delivery-link:hover {
             background-color: #e69500;
             transform: translateY(-2px);
@@ -501,7 +475,7 @@
             font-size: 0.9rem;
         }
 
-        /* Responsive Design */
+        /* ===== RESPONSIVE DESIGN ===== */
         @media (max-width: 992px) {
             .hero h2 {
                 font-size: 3rem;
@@ -513,19 +487,6 @@
             
             .about-img {
                 order: -1;
-            }
-            
-            .menu-category h3::before,
-            .menu-category h3::after {
-                width: 30px;
-            }
-            
-            .menu-category h3::before {
-                left: -40px;
-            }
-            
-            .menu-category h3::after {
-                right: -40px;
             }
         }
 
@@ -567,11 +528,6 @@
             .btn-outline {
                 margin-left: 0;
             }
-            
-            .menu-category h3::before,
-            .menu-category h3::after {
-                display: none;
-            }
         }
 
         @media (max-width: 576px) {
@@ -591,8 +547,8 @@
                 font-size: 2rem;
             }
             
-            .menu-category h3 {
-                font-size: 1.8rem;
+            .menu-category-title h3 {
+                font-size: 1.6rem;
             }
         }
     </style>
@@ -636,161 +592,120 @@
                 <h2>Our Delicious Menu</h2>
             </div>
             
-            <!-- Burgers Category -->
-            <div class="menu-category">
-                <h3>BURGERS</h3>
+            <div class="menu-category-selector">
+                <select id="menu-category">
+                    <option value="">Select a Menu Category</option>
+                    <option value="burgers">Burgers</option>
+                    <option value="chilis">Chili's</option>
+                    <option value="dinners">Dinners</option>
+                    <option value="subs">Subs</option>
+                    <option value="sandwiches">Grilled Sandwiches</option>
+                    <option value="kids">Just For Kids</option>
+                    <option value="desserts">Desserts</option>
+                    <option value="drinks">Drinks</option>
+                    <option value="salads">Salads</option>
+                    <option value="mediterranean">Mediterranean Food</option>
+                    <option value="sides">Sides</option>
+                </select>
             </div>
-            <div class="menu-grid">
-                <div class="menu-item">
-                    <div class="menu-item-img">
-                        <img src="https://images.unsplash.com/photo-1553979459-d2229ba7433b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Gyro Cheese Burger">
-                    </div>
-                    <div class="menu-item-content">
+            
+            <!-- Burgers Category -->
+            <div class="menu-category" id="burgers">
+                <div class="menu-category-title">
+                    <h3>BURGERS</h3>
+                </div>
+                <div class="menu-items">
+                    <div class="menu-item">
                         <div class="menu-item-title">
-                            <h3>Gyro Cheese Burger</h3>
+                            <h4>Gyro Cheese Burger</h4>
                             <div class="menu-item-price">$10.99</div>
                         </div>
                         <p>Burger patty, topped with gyro meat, topped with mozzarella cheese. Taziki sauce.</p>
                     </div>
-                </div>
-                
-                <div class="menu-item">
-                    <div class="menu-item-img">
-                        <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Bacon Cheese Burger">
-                    </div>
-                    <div class="menu-item-content">
+                    
+                    <div class="menu-item">
                         <div class="menu-item-title">
-                            <h3>Bacon Cheese Burger</h3>
+                            <h4>Bacon Cheese Burger</h4>
                             <div class="menu-item-price">$10.99</div>
                         </div>
                         <p>Classic burger with crispy bacon and melted cheese.</p>
                     </div>
-                </div>
-                
-                <div class="menu-item">
-                    <div class="menu-item-img">
-                        <img src="https://images.unsplash.com/photo-1596662951482-0c4ba74a6df6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Mushroom Cheese Burger">
-                    </div>
-                    <div class="menu-item-content">
+                    
+                    <div class="menu-item">
                         <div class="menu-item-title">
-                            <h3>Mushroom Cheese Burger</h3>
+                            <h4>Mushroom Cheese Burger</h4>
                             <div class="menu-item-price">$10.99</div>
                         </div>
                         <p>Juicy burger topped with sautéed mushrooms and melted cheese.</p>
                     </div>
-                </div>
-                
-                <div class="menu-item">
-                    <div class="menu-item-img">
-                        <img src="https://images.unsplash.com/photo-1603064752734-4c48eff53d05?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Egg Cheese Burger">
-                    </div>
-                    <div class="menu-item-content">
+                    
+                    <div class="menu-item">
                         <div class="menu-item-title">
-                            <h3>Egg Cheese Burger</h3>
+                            <h4>Egg Cheese Burger</h4>
                             <div class="menu-item-price">$10.99</div>
                         </div>
                         <p>Burger topped with a fried egg and melted cheese.</p>
                     </div>
-                </div>
-                
-                <div class="menu-item">
-                    <div class="menu-item-img">
-                        <img src="https://images.unsplash.com/photo-1551615593-ef5fe247e8f7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Sausage Cheese Burger">
-                    </div>
-                    <div class="menu-item-content">
+                    
+                    <div class="menu-item">
                         <div class="menu-item-title">
-                            <h3>Sausage Cheese Burger</h3>
+                            <h4>Sausage Cheese Burger</h4>
                             <div class="menu-item-price">$10.99</div>
                         </div>
                         <p>Burger with sausage patty and melted cheese.</p>
                     </div>
-                </div>
-                
-                <div class="menu-item">
-                    <div class="menu-item-img">
-                        <img src="https://images.unsplash.com/photo-1586816001966-79b736744398?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Chili Cheese Burger">
-                    </div>
-                    <div class="menu-item-content">
+                    
+                    <div class="menu-item">
                         <div class="menu-item-title">
-                            <h3>Chili Cheese Burger</h3>
+                            <h4>Chili Cheese Burger</h4>
                             <div class="menu-item-price">$10.99</div>
                         </div>
                         <p>Burger topped with homemade chili and melted cheese.</p>
                     </div>
-                </div>
-                
-                <div class="menu-item">
-                    <div class="menu-item-img">
-                        <img src="https://images.unsplash.com/photo-1610440042657-612c34d95e9f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Avocado Cheese Burger">
-                    </div>
-                    <div class="menu-item-content">
+                    
+                    <div class="menu-item">
                         <div class="menu-item-title">
-                            <h3>Avocado Cheese Burger</h3>
+                            <h4>Avocado Cheese Burger</h4>
                             <div class="menu-item-price">$10.99</div>
                         </div>
                         <p>Burger topped with fresh avocado slices and melted cheese.</p>
                     </div>
-                </div>
-                
-                <div class="menu-item">
-                    <div class="menu-item-img">
-                        <img src="https://images.unsplash.com/photo-1596662951482-0c4ba74a6df6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Double Cheese Burger">
-                    </div>
-                    <div class="menu-item-content">
+                    
+                    <div class="menu-item">
                         <div class="menu-item-title">
-                            <h3>Double Cheese Burger</h3>
+                            <h4>Double Cheese Burger</h4>
                             <div class="menu-item-price">$10.99</div>
                         </div>
                         <p>Two beef patties with double cheese for extra satisfaction.</p>
                     </div>
-                </div>
-                
-                <div class="menu-item">
-                    <div class="menu-item-img">
-                        <img src="https://images.unsplash.com/photo-1565299507177-b0ac66763828?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Double Burger">
-                    </div>
-                    <div class="menu-item-content">
+                    
+                    <div class="menu-item">
                         <div class="menu-item-title">
-                            <h3>Double Burger</h3>
+                            <h4>Double Burger</h4>
                             <div class="menu-item-price">$10.99</div>
                         </div>
                         <p>Two beef patties with classic toppings.</p>
                     </div>
-                </div>
-                
-                <div class="menu-item">
-                    <div class="menu-item-img">
-                        <img src="https://images.unsplash.com/photo-1553979459-d2229ba7433b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Cheese Burger">
-                    </div>
-                    <div class="menu-item-content">
+                    
+                    <div class="menu-item">
                         <div class="menu-item-title">
-                            <h3>Cheese Burger</h3>
+                            <h4>Cheese Burger</h4>
                             <div class="menu-item-price">$8.99</div>
                         </div>
                         <p>Classic beef patty with melted cheese.</p>
                     </div>
-                </div>
-                
-                <div class="menu-item">
-                    <div class="menu-item-img">
-                        <img src="https://images.unsplash.com/photo-1603064752734-4c48eff53d05?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Hamburger">
-                    </div>
-                    <div class="menu-item-content">
+                    
+                    <div class="menu-item">
                         <div class="menu-item-title">
-                            <h3>Hamburger</h3>
+                            <h4>Hamburger</h4>
                             <div class="menu-item-price">$7.99</div>
                         </div>
                         <p>Classic beef patty with fresh toppings.</p>
                     </div>
-                </div>
-                
-                <div class="menu-item">
-                    <div class="menu-item-img">
-                        <img src="https://images.unsplash.com/photo-1610440042657-612c34d95e9f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Chicago Burger">
-                    </div>
-                    <div class="menu-item-content">
+                    
+                    <div class="menu-item">
                         <div class="menu-item-title">
-                            <h3>Chicago Burger</h3>
+                            <h4>Chicago Burger</h4>
                             <div class="menu-item-price">$16.99</div>
                         </div>
                         <p>Burger patty + gyro meat + Bacon + egg + 2 kind cheese. Taziki as sauce. Including fries and drink!</p>
@@ -799,82 +714,54 @@
             </div>
             
             <!-- Chili's Category -->
-            <div class="menu-category">
-                <h3>CHILI'S</h3>
-            </div>
-            <div class="menu-grid">
-                <div class="menu-item">
-                    <div class="menu-item-img">
-                        <img src="https://images.unsplash.com/photo-1579628287174-29651b547b93?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Frito Pie">
-                    </div>
-                    <div class="menu-item-content">
+            <div class="menu-category" id="chilis">
+                <div class="menu-category-title">
+                    <h3>CHILI'S</h3>
+                </div>
+                <div class="menu-items">
+                    <div class="menu-item">
                         <div class="menu-item-title">
-                            <h3>Frito Pie</h3>
+                            <h4>Frito Pie</h4>
                             <div class="menu-item-price">$9.99</div>
                         </div>
                         <p>Fritos topped with homemade chili and cheese.</p>
                     </div>
-                </div>
-                
-                <div class="menu-item">
-                    <div class="menu-item-img">
-                        <img src="https://images.unsplash.com/photo-1586816001966-79b736744398?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Chili Cheese Nachos">
-                    </div>
-                    <div class="menu-item-content">
+                    
+                    <div class="menu-item">
                         <div class="menu-item-title">
-                            <h3>Chili Cheese Nachos</h3>
+                            <h4>Chili Cheese Nachos</h4>
                             <div class="menu-item-price">$9.99</div>
                         </div>
                         <p>Tortilla chips topped with chili, cheese, and jalapeños.</p>
                     </div>
-                </div>
-                
-                <div class="menu-item">
-                    <div class="menu-item-img">
-                        <img src="https://images.unsplash.com/photo-1586816001966-79b736744398?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Chili Cheese French Fries">
-                    </div>
-                    <div class="menu-item-content">
+                    
+                    <div class="menu-item">
                         <div class="menu-item-title">
-                            <h3>Chili Cheese French Fries</h3>
+                            <h4>Chili Cheese French Fries</h4>
                             <div class="menu-item-price">$9.99</div>
                         </div>
                         <p>Crispy fries topped with chili and melted cheese.</p>
                     </div>
-                </div>
-                
-                <div class="menu-item">
-                    <div class="menu-item-img">
-                        <img src="https://images.unsplash.com/photo-1586816001966-79b736744398?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Chili Cheese Tater Tots">
-                    </div>
-                    <div class="menu-item-content">
+                    
+                    <div class="menu-item">
                         <div class="menu-item-title">
-                            <h3>Chili Cheese Tater Tots</h3>
+                            <h4>Chili Cheese Tater Tots</h4>
                             <div class="menu-item-price">$9.99</div>
                         </div>
                         <p>Tater tots loaded with chili and cheese.</p>
                     </div>
-                </div>
-                
-                <div class="menu-item">
-                    <div class="menu-item-img">
-                        <img src="https://images.unsplash.com/photo-1579628287174-29651b547b93?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Chili Bowl">
-                    </div>
-                    <div class="menu-item-content">
+                    
+                    <div class="menu-item">
                         <div class="menu-item-title">
-                            <h3>Chili Bowl</h3>
+                            <h4>Chili Bowl</h4>
                             <div class="menu-item-price">$5.99</div>
                         </div>
                         <p>Homemade chili served in a bowl.</p>
                     </div>
-                </div>
-                
-                <div class="menu-item">
-                    <div class="menu-item-img">
-                        <img src="https://images.unsplash.com/photo-1554866585-cd94860890b7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Chili Cheese Dog">
-                    </div>
-                    <div class="menu-item-content">
+                    
+                    <div class="menu-item">
                         <div class="menu-item-title">
-                            <h3>Chili Cheese Dog</h3>
+                            <h4>Chili Cheese Dog</h4>
                             <div class="menu-item-price">$5.99</div>
                         </div>
                         <p>Hot dog topped with chili and melted cheese.</p>
@@ -883,56 +770,38 @@
             </div>
             
             <!-- Dinners Category -->
-            <div class="menu-category">
-                <h3>DINNERS</h3>
-            </div>
-            <div class="menu-grid">
-                <div class="menu-item">
-                    <div class="menu-item-img">
-                        <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Daily Rice Platter">
-                    </div>
-                    <div class="menu-item-content">
+            <div class="menu-category" id="dinners">
+                <div class="menu-category-title">
+                    <h3>DINNERS</h3>
+                </div>
+                <div class="menu-items">
+                    <div class="menu-item">
                         <div class="menu-item-title">
-                            <h3>Daily Rice Platter</h3>
+                            <h4>Daily Rice Platter</h4>
                             <div class="menu-item-price">$17.99</div>
                         </div>
                         <p>Choice of grilled chicken or gyro meat served with rice.</p>
                     </div>
-                </div>
-                
-                <div class="menu-item">
-                    <div class="menu-item-img">
-                        <img src="https://images.unsplash.com/photo-1562967914-608f82629710?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Boneless Chicken Dinner">
-                    </div>
-                    <div class="menu-item-content">
+                    
+                    <div class="menu-item">
                         <div class="menu-item-title">
-                            <h3>Boneless Chicken Dinner</h3>
+                            <h4>Boneless Chicken Dinner</h4>
                             <div class="menu-item-price">$13.99</div>
                         </div>
                         <p>3 Chicken strips with French fries OR Salad.</p>
                     </div>
-                </div>
-                
-                <div class="menu-item">
-                    <div class="menu-item-img">
-                        <img src="https://images.unsplash.com/photo-1553979459-d2229ba7433b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Mexican Burger Dinner">
-                    </div>
-                    <div class="menu-item-content">
+                    
+                    <div class="menu-item">
                         <div class="menu-item-title">
-                            <h3>Mexican Burger Dinner</h3>
+                            <h4>Mexican Burger Dinner</h4>
                             <div class="menu-item-price">$13.99</div>
                         </div>
                         <p>Spicy burger with Mexican flavors.</p>
                     </div>
-                </div>
-                
-                <div class="menu-item">
-                    <div class="menu-item-img">
-                        <img src="https://images.unsplash.com/photo-1553979459-d2229ba7433b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Steak Burger Dinner">
-                    </div>
-                    <div class="menu-item-content">
+                    
+                    <div class="menu-item">
                         <div class="menu-item-title">
-                            <h3>Steak Burger Dinner</h3>
+                            <h4>Steak Burger Dinner</h4>
                             <div class="menu-item-price">$13.99</div>
                         </div>
                         <p>Premium steak burger with sides.</p>
@@ -941,95 +810,62 @@
             </div>
             
             <!-- Subs Category -->
-            <div class="menu-category">
-                <h3>SUBS</h3>
-            </div>
-            <div class="menu-grid">
-                <div class="menu-item">
-                    <div class="menu-item-img">
-                        <img src="https://images.unsplash.com/photo-1503428593586-e225b39bddfe?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Philly Steak Sub">
-                    </div>
-                    <div class="menu-item-content">
+            <div class="menu-category" id="subs">
+                <div class="menu-category-title">
+                    <h3>SUBS</h3>
+                </div>
+                <div class="menu-items">
+                    <div class="menu-item">
                         <div class="menu-item-title">
-                            <h3>Philly Steak Sub</h3>
+                            <h4>Philly Steak Sub</h4>
                             <div class="menu-item-price">$11.99</div>
                         </div>
                         <p>Classic Philly cheesesteak sandwich.</p>
                     </div>
-                </div>
-                
-                <div class="menu-item">
-                    <div class="menu-item-img">
-                        <img src="https://images.unsplash.com/photo-1565299507177-b0ac66763828?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Crispy Chicken Sub">
-                    </div>
-                    <div class="menu-item-content">
+                    
+                    <div class="menu-item">
                         <div class="menu-item-title">
-                            <h3>Crispy Chicken Sub</h3>
+                            <h4>Crispy Chicken Sub</h4>
                             <div class="menu-item-price">$11.99</div>
                         </div>
                         <p>Crispy chicken breast with fresh toppings.</p>
                     </div>
-                </div>
-                
-                <div class="menu-item">
-                    <div class="menu-item-img">
-                        <img src="https://images.unsplash.com/photo-1565299507177-b0ac66763828?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Grilled Chicken Sub">
-                    </div>
-                    <div class="menu-item-content">
+                    
+                    <div class="menu-item">
                         <div class="menu-item-title">
-                            <h3>Grilled Chicken Sub</h3>
+                            <h4>Grilled Chicken Sub</h4>
                             <div class="menu-item-price">$11.99</div>
                         </div>
                         <p>Grilled chicken breast with fresh veggies.</p>
                     </div>
-                </div>
-                
-                <div class="menu-item">
-                    <div class="menu-item-img">
-                        <img src="https://images.unsplash.com/photo-1503428593586-e225b39bddfe?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Super Sub">
-                    </div>
-                    <div class="menu-item-content">
+                    
+                    <div class="menu-item">
                         <div class="menu-item-title">
-                            <h3>Super Sub</h3>
+                            <h4>Super Sub</h4>
                             <div class="menu-item-price">$11.99</div>
                         </div>
                         <p>Loaded sub with multiple meats and cheeses.</p>
                     </div>
-                </div>
-                
-                <div class="menu-item">
-                    <div class="menu-item-img">
-                        <img src="https://images.unsplash.com/photo-1610440042657-612c34d95e9f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="3 Cheese Avocado Sub">
-                    </div>
-                    <div class="menu-item-content">
+                    
+                    <div class="menu-item">
                         <div class="menu-item-title">
-                            <h3>3 Cheese Avocado Sub</h3>
+                            <h4>3 Cheese Avocado Sub</h4>
                             <div class="menu-item-price">$11.99</div>
                         </div>
                         <p>Three cheeses with fresh avocado slices.</p>
                     </div>
-                </div>
-                
-                <div class="menu-item">
-                    <div class="menu-item-img">
-                        <img src="https://images.unsplash.com/photo-1610440042657-612c34d95e9f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Turkey & Cheese Sub">
-                    </div>
-                    <div class="menu-item-content">
+                    
+                    <div class="menu-item">
                         <div class="menu-item-title">
-                            <h3>Turkey & Cheese Sub</h3>
+                            <h4>Turkey & Cheese Sub</h4>
                             <div class="menu-item-price">$10.99</div>
                         </div>
                         <p>Fresh turkey breast with cheese and toppings.</p>
                     </div>
-                </div>
-                
-                <div class="menu-item">
-                    <div class="menu-item-img">
-                        <img src="https://images.unsplash.com/photo-1610440042657-612c34d95e9f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Tuna Sub">
-                    </div>
-                    <div class="menu-item-content">
+                    
+                    <div class="menu-item">
                         <div class="menu-item-title">
-                            <h3>Tuna Sub</h3>
+                            <h4>Tuna Sub</h4>
                             <div class="menu-item-price">$10.99</div>
                         </div>
                         <p>Tuna salad with fresh veggies on sub bread.</p>
@@ -1038,82 +874,54 @@
             </div>
             
             <!-- Grilled Sandwiches Category -->
-            <div class="menu-category">
-                <h3>GRILLED SANDWICHES</h3>
-            </div>
-            <div class="menu-grid">
-                <div class="menu-item">
-                    <div class="menu-item-img">
-                        <img src="https://images.unsplash.com/photo-1525351484163-7529414344d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Club B-H-T Sandwich">
-                    </div>
-                    <div class="menu-item-content">
+            <div class="menu-category" id="sandwiches">
+                <div class="menu-category-title">
+                    <h3>GRILLED SANDWICHES</h3>
+                </div>
+                <div class="menu-items">
+                    <div class="menu-item">
                         <div class="menu-item-title">
-                            <h3>Club B-H-T Sandwich</h3>
+                            <h4>Club B-H-T Sandwich</h4>
                             <div class="menu-item-price">$8.99</div>
                         </div>
                         <p>Bacon, ham, turkey with lettuce and tomato.</p>
                     </div>
-                </div>
-                
-                <div class="menu-item">
-                    <div class="menu-item-img">
-                        <img src="https://images.unsplash.com/photo-1525351484163-7529414344d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Patty Melt">
-                    </div>
-                    <div class="menu-item-content">
+                    
+                    <div class="menu-item">
                         <div class="menu-item-title">
-                            <h3>Patty Melt</h3>
+                            <h4>Patty Melt</h4>
                             <div class="menu-item-price">$8.99</div>
                         </div>
                         <p>Beef patty with caramelized onions on rye bread.</p>
                     </div>
-                </div>
-                
-                <div class="menu-item">
-                    <div class="menu-item-img">
-                        <img src="https://images.unsplash.com/photo-1525351484163-7529414344d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Chicken Fried Steak Sandwich">
-                    </div>
-                    <div class="menu-item-content">
+                    
+                    <div class="menu-item">
                         <div class="menu-item-title">
-                            <h3>Chicken Fried Steak Sandwich</h3>
+                            <h4>Chicken Fried Steak Sandwich</h4>
                             <div class="menu-item-price">$8.99</div>
                         </div>
                         <p>Breaded steak with gravy on a bun.</p>
                     </div>
-                </div>
-                
-                <div class="menu-item">
-                    <div class="menu-item-img">
-                        <img src="https://images.unsplash.com/photo-1525351484163-7529414344d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Turkey & Cheese Sandwich">
-                    </div>
-                    <div class="menu-item-content">
+                    
+                    <div class="menu-item">
                         <div class="menu-item-title">
-                            <h3>Turkey & Cheese Sandwich</h3>
+                            <h4>Turkey & Cheese Sandwich</h4>
                             <div class="menu-item-price">$8.99</div>
                         </div>
                         <p>Grilled turkey and cheese sandwich.</p>
                     </div>
-                </div>
-                
-                <div class="menu-item">
-                    <div class="menu-item-img">
-                        <img src="https://images.unsplash.com/photo-1525351484163-7529414344d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="BLT Sandwich">
-                    </div>
-                    <div class="menu-item-content">
+                    
+                    <div class="menu-item">
                         <div class="menu-item-title">
-                            <h3>BLT Sandwich</h3>
+                            <h4>BLT Sandwich</h4>
                             <div class="menu-item-price">$8.99</div>
                         </div>
                         <p>Bacon, lettuce, and tomato on toasted bread.</p>
                     </div>
-                </div>
-                
-                <div class="menu-item">
-                    <div class="menu-item-img">
-                        <img src="https://images.unsplash.com/photo-1525351484163-7529414344d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Grilled Cheese Sandwich">
-                    </div>
-                    <div class="menu-item-content">
+                    
+                    <div class="menu-item">
                         <div class="menu-item-title">
-                            <h3>Grilled Cheese Sandwich</h3>
+                            <h4>Grilled Cheese Sandwich</h4>
                             <div class="menu-item-price">$4.99</div>
                         </div>
                         <p>Classic melted cheese on grilled bread.</p>
@@ -1122,56 +930,38 @@
             </div>
             
             <!-- Kids Category -->
-            <div class="menu-category">
-                <h3>JUST FOR KIDS :)</h3>
-            </div>
-            <div class="menu-grid">
-                <div class="menu-item">
-                    <div class="menu-item-img">
-                        <img src="https://images.unsplash.com/photo-1554866585-cd94860890b7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Kids Hot Dog">
-                    </div>
-                    <div class="menu-item-content">
+            <div class="menu-category" id="kids">
+                <div class="menu-category-title">
+                    <h3>JUST FOR KIDS :)</h3>
+                </div>
+                <div class="menu-items">
+                    <div class="menu-item">
                         <div class="menu-item-title">
-                            <h3>Kids Hot Dog</h3>
+                            <h4>Kids Hot Dog</h4>
                             <div class="menu-item-price">$7.99</div>
                         </div>
                         <p>Includes fries or chips w/drink!</p>
                     </div>
-                </div>
-                
-                <div class="menu-item">
-                    <div class="menu-item-img">
-                        <img src="https://images.unsplash.com/photo-1553979459-d2229ba7433b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Kids Hamburger">
-                    </div>
-                    <div class="menu-item-content">
+                    
+                    <div class="menu-item">
                         <div class="menu-item-title">
-                            <h3>Kids Hamburger</h3>
+                            <h4>Kids Hamburger</h4>
                             <div class="menu-item-price">$7.99</div>
                         </div>
                         <p>Includes fries or chips w/drink!</p>
                     </div>
-                </div>
-                
-                <div class="menu-item">
-                    <div class="menu-item-img">
-                        <img src="https://images.unsplash.com/photo-1553979459-d2229ba7433b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Kids Cheese Burger">
-                    </div>
-                    <div class="menu-item-content">
+                    
+                    <div class="menu-item">
                         <div class="menu-item-title">
-                            <h3>Kids Cheese Burger</h3>
+                            <h4>Kids Cheese Burger</h4>
                             <div class="menu-item-price">$7.99</div>
                         </div>
                         <p>Includes fries or chips w/drink!</p>
                     </div>
-                </div>
-                
-                <div class="menu-item">
-                    <div class="menu-item-img">
-                        <img src="https://images.unsplash.com/photo-1562967914-608f82629710?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Kids Chicken Nuggets">
-                    </div>
-                    <div class="menu-item-content">
+                    
+                    <div class="menu-item">
                         <div class="menu-item-title">
-                            <h3>Kids Chicken Nuggets</h3>
+                            <h4>Kids Chicken Nuggets</h4>
                             <div class="menu-item-price">$7.99</div>
                         </div>
                         <p>Includes fries or chips w/drink!</p>
@@ -1180,17 +970,14 @@
             </div>
             
             <!-- Desserts Category -->
-            <div class="menu-category">
-                <h3>DESSERTS</h3>
-            </div>
-            <div class="menu-grid">
-                <div class="menu-item">
-                    <div class="menu-item-img">
-                        <img src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Baklava">
-                    </div>
-                    <div class="menu-item-content">
+            <div class="menu-category" id="desserts">
+                <div class="menu-category-title">
+                    <h3>DESSERTS</h3>
+                </div>
+                <div class="menu-items">
+                    <div class="menu-item">
                         <div class="menu-item-title">
-                            <h3>Baklava</h3>
+                            <h4>Baklava</h4>
                             <div class="menu-item-price">$2.99</div>
                         </div>
                         <p>Sweet pastry with nuts and honey.</p>
@@ -1199,17 +986,14 @@
             </div>
             
             <!-- Drinks Category -->
-            <div class="menu-category">
-                <h3>DRINKS</h3>
-            </div>
-            <div class="menu-grid">
-                <div class="menu-item">
-                    <div class="menu-item-img">
-                        <img src="https://images.unsplash.com/photo-1554866585-cd94860890b7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Fountain Drinks">
-                    </div>
-                    <div class="menu-item-content">
+            <div class="menu-category" id="drinks">
+                <div class="menu-category-title">
+                    <h3>DRINKS</h3>
+                </div>
+                <div class="menu-items">
+                    <div class="menu-item">
                         <div class="menu-item-title">
-                            <h3>Fountain Drinks 20 Oz</h3>
+                            <h4>Fountain Drinks 20 Oz</h4>
                             <div class="menu-item-price">$3.50</div>
                         </div>
                         <p>Pepsi - Diet Pepsi - Mountain Dew - Crush Orange - Tropicana Lemonade - Starry - Dr Pepper - Diet Dr Pepper</p>
@@ -1218,121 +1002,78 @@
             </div>
             
             <!-- Salads Category -->
-            <div class="menu-category">
-                <h3>SALADS</h3>
-            </div>
-            <div class="menu-grid">
-                <div class="menu-item">
-                    <div class="menu-item-img">
-                        <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Chef Salad">
-                    </div>
-                    <div class="menu-item-content">
+            <div class="menu-category" id="salads">
+                <div class="menu-category-title">
+                    <h3>SALADS</h3>
+                </div>
+                <div class="menu-items">
+                    <div class="menu-item">
                         <div class="menu-item-title">
-                            <h3>Chef Salad</h3>
+                            <h4>Chef Salad</h4>
                             <div class="menu-item-price">$13.00</div>
                         </div>
                         <p>Mixed greens with meats and cheeses.</p>
                     </div>
-                </div>
-                
-                <div class="menu-item">
-                    <div class="menu-item-img">
-                        <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Chicken Salad">
-                    </div>
-                    <div class="menu-item-content">
+                    
+                    <div class="menu-item">
                         <div class="menu-item-title">
-                            <h3>Chicken Salad</h3>
+                            <h4>Chicken Salad</h4>
                             <div class="menu-item-price">$13.00</div>
                         </div>
                         <p>Grilled chicken on mixed greens.</p>
                     </div>
-                </div>
-                
-                <div class="menu-item">
-                    <div class="menu-item-img">
-                        <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Avocado Salad">
-                    </div>
-                    <div class="menu-item-content">
+                    
+                    <div class="menu-item">
                         <div class="menu-item-title">
-                            <h3>Avocado Salad</h3>
+                            <h4>Avocado Salad</h4>
                             <div class="menu-item-price">$13.00</div>
                         </div>
                         <p>Fresh avocado on mixed greens.</p>
                     </div>
-                </div>
-                
-                <div class="menu-item">
-                    <div class="menu-item-img">
-                        <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Tuna Salad">
-                    </div>
-                    <div class="menu-item-content">
+                    
+                    <div class="menu-item">
                         <div class="menu-item-title">
-                            <h3>Tuna Salad</h3>
+                            <h4>Tuna Salad</h4>
                             <div class="menu-item-price">$13.00</div>
                         </div>
                         <p>Tuna salad on fresh greens.</p>
                     </div>
-                </div>
-                
-                <div class="menu-item">
-                    <div class="menu-item-img">
-                        <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Taco Salad">
-                    </div>
-                    <div class="menu-item-content">
+                    
+                    <div class="menu-item">
                         <div class="menu-item-title">
-                            <h3>Taco Salad</h3>
+                            <h4>Taco Salad</h4>
                             <div class="menu-item-price">$13.00</div>
                         </div>
                         <p>Mexican-style salad with taco ingredients.</p>
                     </div>
-                </div>
-                
-                <div class="menu-item">
-                    <div class="menu-item-img">
-                        <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Gyro Salad">
-                    </div>
-                    <div class="menu-item-content">
+                    
+                    <div class="menu-item">
                         <div class="menu-item-title">
-                            <h3>Gyro Salad</h3>
+                            <h4>Gyro Salad</h4>
                             <div class="menu-item-price">$13.00</div>
                         </div>
                         <p>Gyro meat on fresh greens with tzatziki.</p>
                     </div>
-                </div>
-                
-                <div class="menu-item">
-                    <div class="menu-item-img">
-                        <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Crispy Chicken Salad">
-                    </div>
-                    <div class="menu-item-content">
+                    
+                    <div class="menu-item">
                         <div class="menu-item-title">
-                            <h3>Crispy Chicken Salad</h3>
+                            <h4>Crispy Chicken Salad</h4>
                             <div class="menu-item-price">$13.00</div>
                         </div>
                         <p>Crispy chicken on mixed greens.</p>
                     </div>
-                </div>
-                
-                <div class="menu-item">
-                    <div class="menu-item-img">
-                        <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Greek Salad">
-                    </div>
-                    <div class="menu-item-content">
+                    
+                    <div class="menu-item">
                         <div class="menu-item-title">
-                            <h3>Greek Salad</h3>
+                            <h4>Greek Salad</h4>
                             <div class="menu-item-price">$13.00</div>
                         </div>
                         <p>Traditional Greek salad with feta and olives.</p>
                     </div>
-                </div>
-                
-                <div class="menu-item">
-                    <div class="menu-item-img">
-                        <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Green Salad">
-                    </div>
-                    <div class="menu-item-content">
+                    
+                    <div class="menu-item">
                         <div class="menu-item-title">
-                            <h3>Green Salad</h3>
+                            <h4>Green Salad</h4>
                             <div class="menu-item-price">$11.99</div>
                         </div>
                         <p>Fresh mixed greens with dressing.</p>
@@ -1341,82 +1082,54 @@
             </div>
             
             <!-- Mediterranean Food Category -->
-            <div class="menu-category">
-                <h3>MEDITERRANEAN FOOD</h3>
-            </div>
-            <div class="menu-grid">
-                <div class="menu-item">
-                    <div class="menu-item-img">
-                        <img src="https://images.unsplash.com/photo-1625938143774-7f5a6ddb1a16?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Gyro">
-                    </div>
-                    <div class="menu-item-content">
+            <div class="menu-category" id="mediterranean">
+                <div class="menu-category-title">
+                    <h3>MEDITERRANEAN FOOD</h3>
+                </div>
+                <div class="menu-items">
+                    <div class="menu-item">
                         <div class="menu-item-title">
-                            <h3>Gyro</h3>
+                            <h4>Gyro</h4>
                             <div class="menu-item-price">$10.99</div>
                         </div>
                         <p>Traditional gyro with tzatziki sauce.</p>
                     </div>
-                </div>
-                
-                <div class="menu-item">
-                    <div class="menu-item-img">
-                        <img src="https://images.unsplash.com/photo-1625938143774-7f5a6ddb1a16?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Chicken Gyro">
-                    </div>
-                    <div class="menu-item-content">
+                    
+                    <div class="menu-item">
                         <div class="menu-item-title">
-                            <h3>Chicken Gyro</h3>
+                            <h4>Chicken Gyro</h4>
                             <div class="menu-item-price">$10.99</div>
                         </div>
                         <p>Grilled chicken gyro with tzatziki sauce.</p>
                     </div>
-                </div>
-                
-                <div class="menu-item">
-                    <div class="menu-item-img">
-                        <img src="https://images.unsplash.com/photo-1625938143774-7f5a6ddb1a16?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Falafel">
-                    </div>
-                    <div class="menu-item-content">
+                    
+                    <div class="menu-item">
                         <div class="menu-item-title">
-                            <h3>Falafel</h3>
+                            <h4>Falafel</h4>
                             <div class="menu-item-price">$10.99</div>
                         </div>
                         <p>Crispy falafel balls with tahini sauce.</p>
                     </div>
-                </div>
-                
-                <div class="menu-item">
-                    <div class="menu-item-img">
-                        <img src="https://images.unsplash.com/photo-1625938143774-7f5a6ddb1a16?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Hummus & Pita Bread">
-                    </div>
-                    <div class="menu-item-content">
+                    
+                    <div class="menu-item">
                         <div class="menu-item-title">
-                            <h3>Hummus & Pita Bread</h3>
+                            <h4>Hummus & Pita Bread</h4>
                             <div class="menu-item-price">$7.99</div>
                         </div>
                         <p>Creamy hummus with warm pita bread.</p>
                     </div>
-                </div>
-                
-                <div class="menu-item">
-                    <div class="menu-item-img">
-                        <img src="https://images.unsplash.com/photo-1625938143774-7f5a6ddb1a16?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Tabouli">
-                    </div>
-                    <div class="menu-item-content">
+                    
+                    <div class="menu-item">
                         <div class="menu-item-title">
-                            <h3>Tabouli</h3>
+                            <h4>Tabouli</h4>
                             <div class="menu-item-price">$5.99</div>
                         </div>
                         <p>Fresh parsley salad with bulgur wheat.</p>
                     </div>
-                </div>
-                
-                <div class="menu-item">
-                    <div class="menu-item-img">
-                        <img src="https://images.unsplash.com/photo-1625938143774-7f5a6ddb1a16?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Grape Leaves">
-                    </div>
-                    <div class="menu-item-content">
+                    
+                    <div class="menu-item">
                         <div class="menu-item-title">
-                            <h3>Grape Leaves</h3>
+                            <h4>Grape Leaves</h4>
                             <div class="menu-item-price">$5.99</div>
                         </div>
                         <p>Stuffed grape leaves with rice and herbs.</p>
@@ -1425,134 +1138,86 @@
             </div>
             
             <!-- Sides Category -->
-            <div class="menu-category">
-                <h3>SIDES</h3>
-            </div>
-            <div class="menu-grid">
-                <div class="menu-item">
-                    <div class="menu-item-img">
-                        <img src="https://images.unsplash.com/photo-1586816001966-79b736744398?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Extra Meat">
-                    </div>
-                    <div class="menu-item-content">
+            <div class="menu-category" id="sides">
+                <div class="menu-category-title">
+                    <h3>SIDES</h3>
+                </div>
+                <div class="menu-items">
+                    <div class="menu-item">
                         <div class="menu-item-title">
-                            <h3>Extra Meat</h3>
+                            <h4>Extra Meat</h4>
                             <div class="menu-item-price">$3.99</div>
                         </div>
                         <p>Add extra meat to any dish.</p>
                     </div>
-                </div>
-                
-                <div class="menu-item">
-                    <div class="menu-item-img">
-                        <img src="https://images.unsplash.com/photo-1586816001966-79b736744398?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Side Meat">
-                    </div>
-                    <div class="menu-item-content">
+                    
+                    <div class="menu-item">
                         <div class="menu-item-title">
-                            <h3>Side Meat (Gyro / Grilled Chicken)</h3>
+                            <h4>Side Meat (Gyro / Grilled Chicken)</h4>
                             <div class="menu-item-price">$7.99</div>
                         </div>
                         <p>Side of gyro or grilled chicken.</p>
                     </div>
-                </div>
-                
-                <div class="menu-item">
-                    <div class="menu-item-img">
-                        <img src="https://images.unsplash.com/photo-1586816001966-79b736744398?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Okra">
-                    </div>
-                    <div class="menu-item-content">
+                    
+                    <div class="menu-item">
                         <div class="menu-item-title">
-                            <h3>Okra</h3>
+                            <h4>Okra</h4>
                             <div class="menu-item-price">$4.99</div>
                         </div>
                         <p>Fried okra side dish.</p>
                     </div>
-                </div>
-                
-                <div class="menu-item">
-                    <div class="menu-item-img">
-                        <img src="https://images.unsplash.com/photo-1586816001966-79b736744398?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Tater Tots">
-                    </div>
-                    <div class="menu-item-content">
+                    
+                    <div class="menu-item">
                         <div class="menu-item-title">
-                            <h3>Tater Tots</h3>
+                            <h4>Tater Tots</h4>
                             <div class="menu-item-price">$4.99</div>
                         </div>
                         <p>Crispy tater tots.</p>
                     </div>
-                </div>
-                
-                <div class="menu-item">
-                    <div class="menu-item-img">
-                        <img src="https://images.unsplash.com/photo-1586816001966-79b736744398?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Onion Rings">
-                    </div>
-                    <div class="menu-item-content">
+                    
+                    <div class="menu-item">
                         <div class="menu-item-title">
-                            <h3>Onion Rings</h3>
+                            <h4>Onion Rings</h4>
                             <div class="menu-item-price">$5.99</div>
                         </div>
                         <p>Crispy battered onion rings.</p>
                     </div>
-                </div>
-                
-                <div class="menu-item">
-                    <div class="menu-item-img">
-                        <img src="https://images.unsplash.com/photo-1586816001966-79b736744398?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="French Fries">
-                    </div>
-                    <div class="menu-item-content">
+                    
+                    <div class="menu-item">
                         <div class="menu-item-title">
-                            <h3>French Fries</h3>
+                            <h4>French Fries</h4>
                             <div class="menu-item-price">$3.50</div>
                         </div>
                         <p>Classic french fries.</p>
                     </div>
-                </div>
-                
-                <div class="menu-item">
-                    <div class="menu-item-img">
-                        <img src="https://images.unsplash.com/photo-1586816001966-79b736744398?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Fried Mushrooms">
-                    </div>
-                    <div class="menu-item-content">
+                    
+                    <div class="menu-item">
                         <div class="menu-item-title">
-                            <h3>Fried Mushrooms</h3>
+                            <h4>Fried Mushrooms</h4>
                             <div class="menu-item-price">$6.99</div>
                         </div>
                         <p>Battered and fried mushrooms.</p>
                     </div>
-                </div>
-                
-                <div class="menu-item">
-                    <div class="menu-item-img">
-                        <img src="https://images.unsplash.com/photo-1586816001966-79b736744398?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Dill Pickle">
-                    </div>
-                    <div class="menu-item-content">
+                    
+                    <div class="menu-item">
                         <div class="menu-item-title">
-                            <h3>Dill Pickle</h3>
+                            <h4>Dill Pickle</h4>
                             <div class="menu-item-price">$2.49</div>
                         </div>
                         <p>Large dill pickle spear.</p>
                     </div>
-                </div>
-                
-                <div class="menu-item">
-                    <div class="menu-item-img">
-                        <img src="https://images.unsplash.com/photo-1586816001966-79b736744398?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Chips">
-                    </div>
-                    <div class="menu-item-content">
+                    
+                    <div class="menu-item">
                         <div class="menu-item-title">
-                            <h3>Chips</h3>
+                            <h4>Chips</h4>
                             <div class="menu-item-price">$1.49</div>
                         </div>
                         <p>Bag of potato chips.</p>
                     </div>
-                </div>
-                
-                <div class="menu-item">
-                    <div class="menu-item-img">
-                        <img src="https://images.unsplash.com/photo-1586816001966-79b736744398?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Pita Bread">
-                    </div>
-                    <div class="menu-item-content">
+                    
+                    <div class="menu-item">
                         <div class="menu-item-title">
-                            <h3>Pita Bread</h3>
+                            <h4>Pita Bread</h4>
                             <div class="menu-item-price">$2.50</div>
                         </div>
                         <p>Warm pita bread.</p>
@@ -1624,24 +1289,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="contact-form">
-                    <h3>Send Us a Message</h3>
-                    <form>
-                        <div class="form-group">
-                            <input type="text" placeholder="Your Name" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" placeholder="Your Email" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="tel" placeholder="Your Phone">
-                        </div>
-                        <div class="form-group">
-                            <textarea placeholder="Your Message" required></textarea>
-                        </div>
-                        <button type="submit" class="btn">Send Message</button>
-                    </form>
-                </div>
             </div>
         </div>
     </section>
@@ -1658,7 +1305,6 @@
                         <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
                         <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
                         <a href="https://www.yelp.com/biz/jumbo-hamburgers-tulsa-4?utm_campaign=www_business_share_popup&utm_medium=copy_link&utm_source=(direct)" target="_blank"><i class="fab fa-yelp"></i></a>
-                        <a href="https://www.tiktok.com/" target="_blank"><i class="fab fa-tiktok"></i></a>
                     </div>
                 </div>
                 <div class="footer-col">
@@ -1733,6 +1379,25 @@
         window.addEventListener('scroll', () => {
             const header = document.querySelector('header');
             header.classList.toggle('sticky', window.scrollY > 0);
+        });
+        
+        // Menu category selector
+        const categorySelector = document.getElementById('menu-category');
+        const menuCategories = document.querySelectorAll('.menu-category');
+        
+        // Show the first category by default
+        menuCategories[0].classList.add('active');
+        
+        categorySelector.addEventListener('change', function() {
+            // Hide all categories
+            menuCategories.forEach(category => {
+                category.classList.remove('active');
+            });
+            
+            // Show selected category
+            if (this.value) {
+                document.getElementById(this.value).classList.add('active');
+            }
         });
     </script>
 </body>
